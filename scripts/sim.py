@@ -22,6 +22,18 @@ def main():
 
     build_dir.mkdir(exist_ok=True)
     tests = {
+        "tb_timer": [
+            project_root / "rtl" / "peripherals" / "timer.sv",
+            project_root / "tb" / "tb_timer.sv",
+        ],
+        "tb_gpio": [
+            project_root / "rtl" / "peripherals" / "gpio.sv",
+            project_root / "tb" / "tb_gpio.sv",
+        ],
+        "tb_uart_tx": [
+            project_root / "rtl" / "peripherals" / "uart_tx.sv",
+            project_root / "tb" / "tb_uart_tx.sv",
+        ],
         "tb_simple_interconnect": [
             project_root / "rtl" / "bus" / "simple_interconnect.sv",
             project_root / "tb" / "tb_simple_interconnect.sv",
