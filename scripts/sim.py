@@ -22,6 +22,25 @@ def main():
 
     build_dir.mkdir(exist_ok=True)
     tests = {
+        "tb_rv32i_mini_soc": [
+            project_root / "rtl" / "cpu" / "alu_pkg.sv",
+            project_root / "rtl" / "cpu" / "imm_gen_pkg.sv",
+            project_root / "rtl" / "cpu" / "control_unit_pkg.sv",
+            project_root / "rtl" / "cpu" / "alu.sv",
+            project_root / "rtl" / "cpu" / "regfile.sv",
+            project_root / "rtl" / "cpu" / "imm_gen.sv",
+            project_root / "rtl" / "cpu" / "control_unit.sv",
+            project_root / "rtl" / "cpu" / "forwarding_unit.sv",
+            project_root / "rtl" / "cpu" / "hazard_unit.sv",
+            project_root / "rtl" / "cpu" / "rv32i_core_pipeline.sv",
+            project_root / "rtl" / "memory" / "data_ram.sv",
+            project_root / "rtl" / "bus" / "simple_interconnect.sv",
+            project_root / "rtl" / "peripherals" / "uart_tx.sv",
+            project_root / "rtl" / "peripherals" / "gpio.sv",
+            project_root / "rtl" / "peripherals" / "timer.sv",
+            project_root / "rtl" / "rv32i_mini_soc.sv",
+            project_root / "tb" / "tb_rv32i_mini_soc.sv",
+        ],
         "tb_timer": [
             project_root / "rtl" / "peripherals" / "timer.sv",
             project_root / "tb" / "tb_timer.sv",
