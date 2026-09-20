@@ -22,6 +22,14 @@ def main():
 
     build_dir.mkdir(exist_ok=True)
     tests = {
+        "tb_simple_interconnect": [
+            project_root / "rtl" / "bus" / "simple_interconnect.sv",
+            project_root / "tb" / "tb_simple_interconnect.sv",
+        ],
+        "tb_data_ram": [
+            project_root / "rtl" / "memory" / "data_ram.sv",
+            project_root / "tb" / "tb_data_ram.sv",
+        ],
         "tb_alu": [
             project_root / "rtl" / "cpu" / "alu_pkg.sv",
             project_root / "rtl" / "cpu" / "alu.sv",
