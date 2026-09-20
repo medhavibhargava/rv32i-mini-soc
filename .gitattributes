@@ -1,0 +1,5 @@
+* text=auto
+*.sv text eol=lf
+*.svh text eol=lf
+*.py text eol=lf
+*.md text eol=lf
