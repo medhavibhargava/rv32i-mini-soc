@@ -1,0 +1,31 @@
+# Technology-independent synthesis for the complete RV32I Mini-SoC.
+# Run from the repository root:
+#   yosys -l reports/yosys_synthesis.log -s scripts/synth.ys
+
+read_verilog -sv -D YOSYS_SYNTHESIS \
+  rtl/cpu/alu_pkg.sv \
+  rtl/cpu/imm_gen_pkg.sv \
+  rtl/cpu/control_unit_pkg.sv \
+  rtl/cpu/alu.sv \
+  rtl/cpu/regfile.sv \
+  rtl/cpu/imm_gen.sv \
+  rtl/cpu/control_unit.sv \
+  rtl/cpu/forwarding_unit.sv \
+  rtl/cpu/hazard_unit.sv \
+  rtl/cpu/rv32i_core_pipeline.sv \
+  rtl/memory/data_ram.sv \
+  rtl/bus/simple_interconnect.sv \
+  rtl/peripherals/uart_tx.sv \
+  rtl/peripherals/gpio.sv \
+  rtl/peripherals/timer.sv \
+  rtl/rv32i_mini_soc.sv
+
+hierarchy -check -top rv32i_mini_soc
+
+# Stop after coarse synthesis so inferred memories remain visible as generic
+# memory cells instead of being expanded into thousands of flip-flops/muxes.
+synth -top rv32i_mini_soc -run begin:fine
+check -assert
+
+tee -o reports/yosys_stat.txt stat -top rv32i_mini_soc
+write_json build/rv32i_mini_soc_coarse.json

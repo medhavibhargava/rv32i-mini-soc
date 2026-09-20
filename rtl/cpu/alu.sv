@@ -1,12 +1,18 @@
 `timescale 1ns/1ps
 
+`ifdef YOSYS_SYNTHESIS
+import alu_pkg::*;
+`endif
+
 module alu (
   input  logic [31:0]      lhs_i,
   input  logic [31:0]      rhs_i,
   input  alu_pkg::alu_op_t op_i,
   output logic [31:0]      result_o
 );
+`ifndef YOSYS_SYNTHESIS
   import alu_pkg::*;
+`endif
 
   logic [4:0] shift_amount;
 

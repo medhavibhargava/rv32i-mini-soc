@@ -1,0 +1,2890 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.69 (git sha1 9f75ca1f9, Release, Clang /workspace/YoWASP/yosys/wasi-sdk-33.0-x86_64-linux/share/cmake/../..//bin/clang++ 22.1.0)
+
+-- Executing script file `scripts/synth.ys' --
+
+1. Executing Verilog-2005 frontend: rtl/cpu/alu_pkg.sv
+Parsing SystemVerilog input from `rtl/cpu/alu_pkg.sv' to AST representation.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: rtl/cpu/imm_gen_pkg.sv
+Parsing SystemVerilog input from `rtl/cpu/imm_gen_pkg.sv' to AST representation.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: rtl/cpu/control_unit_pkg.sv
+Parsing SystemVerilog input from `rtl/cpu/control_unit_pkg.sv' to AST representation.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: rtl/cpu/alu.sv
+Parsing SystemVerilog input from `rtl/cpu/alu.sv' to AST representation.
+Generating RTLIL representation for module `\alu'.
+Successfully finished Verilog frontend.
+
+5. Executing Verilog-2005 frontend: rtl/cpu/regfile.sv
+Parsing SystemVerilog input from `rtl/cpu/regfile.sv' to AST representation.
+Generating RTLIL representation for module `\regfile'.
+Successfully finished Verilog frontend.
+
+6. Executing Verilog-2005 frontend: rtl/cpu/imm_gen.sv
+Parsing SystemVerilog input from `rtl/cpu/imm_gen.sv' to AST representation.
+Generating RTLIL representation for module `\imm_gen'.
+Successfully finished Verilog frontend.
+
+7. Executing Verilog-2005 frontend: rtl/cpu/control_unit.sv
+Parsing SystemVerilog input from `rtl/cpu/control_unit.sv' to AST representation.
+Generating RTLIL representation for module `\control_unit'.
+Successfully finished Verilog frontend.
+
+8. Executing Verilog-2005 frontend: rtl/cpu/forwarding_unit.sv
+Parsing SystemVerilog input from `rtl/cpu/forwarding_unit.sv' to AST representation.
+Generating RTLIL representation for module `\forwarding_unit'.
+Successfully finished Verilog frontend.
+
+9. Executing Verilog-2005 frontend: rtl/cpu/hazard_unit.sv
+Parsing SystemVerilog input from `rtl/cpu/hazard_unit.sv' to AST representation.
+Generating RTLIL representation for module `\hazard_unit'.
+Successfully finished Verilog frontend.
+
+10. Executing Verilog-2005 frontend: rtl/cpu/rv32i_core_pipeline.sv
+Parsing SystemVerilog input from `rtl/cpu/rv32i_core_pipeline.sv' to AST representation.
+Generating RTLIL representation for module `\rv32i_core_pipeline'.
+Successfully finished Verilog frontend.
+
+11. Executing Verilog-2005 frontend: rtl/memory/data_ram.sv
+Parsing SystemVerilog input from `rtl/memory/data_ram.sv' to AST representation.
+Generating RTLIL representation for module `\data_ram'.
+Successfully finished Verilog frontend.
+
+12. Executing Verilog-2005 frontend: rtl/bus/simple_interconnect.sv
+Parsing SystemVerilog input from `rtl/bus/simple_interconnect.sv' to AST representation.
+Generating RTLIL representation for module `\simple_interconnect'.
+Successfully finished Verilog frontend.
+
+13. Executing Verilog-2005 frontend: rtl/peripherals/uart_tx.sv
+Parsing SystemVerilog input from `rtl/peripherals/uart_tx.sv' to AST representation.
+Generating RTLIL representation for module `\uart_tx'.
+Successfully finished Verilog frontend.
+
+14. Executing Verilog-2005 frontend: rtl/peripherals/gpio.sv
+Parsing SystemVerilog input from `rtl/peripherals/gpio.sv' to AST representation.
+Generating RTLIL representation for module `\gpio'.
+Successfully finished Verilog frontend.
+
+15. Executing Verilog-2005 frontend: rtl/peripherals/timer.sv
+Parsing SystemVerilog input from `rtl/peripherals/timer.sv' to AST representation.
+Generating RTLIL representation for module `\timer'.
+Successfully finished Verilog frontend.
+
+16. Executing Verilog-2005 frontend: rtl/rv32i_mini_soc.sv
+Parsing SystemVerilog input from `rtl/rv32i_mini_soc.sv' to AST representation.
+Generating RTLIL representation for module `\rv32i_mini_soc'.
+Successfully finished Verilog frontend.
+
+17. Executing HIERARCHY pass (managing design hierarchy).
+
+17.1. Analyzing design hierarchy..
+Top module:  \rv32i_mini_soc
+Used module:     \timer
+Used module:     \gpio
+Used module:     \uart_tx
+Used module:     \data_ram
+Used module:     \simple_interconnect
+Used module:     \rv32i_core_pipeline
+Used module:         \alu
+Used module:         \forwarding_unit
+Used module:         \regfile
+Used module:         \imm_gen
+Used module:         \hazard_unit
+Used module:         \control_unit
+Parameter \GPIO_WIDTH = 32
+
+17.2. Executing AST frontend in derive mode using pre-parsed AST for module `\gpio'.
+Parameter \GPIO_WIDTH = 32
+Generating RTLIL representation for module `$paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000'.
+Parameter \CLOCK_FREQ_HZ = 50000000
+Parameter \BAUD_RATE = 115200
+
+17.3. Executing AST frontend in derive mode using pre-parsed AST for module `\uart_tx'.
+Parameter \CLOCK_FREQ_HZ = 50000000
+Parameter \BAUD_RATE = 115200
+Generating RTLIL representation for module `$paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx'.
+Parameter \MEM_SIZE_BYTES = 4096
+
+17.4. Executing AST frontend in derive mode using pre-parsed AST for module `\data_ram'.
+Parameter \MEM_SIZE_BYTES = 4096
+Generating RTLIL representation for module `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000'.
+
+17.5. Analyzing design hierarchy..
+Top module:  \rv32i_mini_soc
+Used module:     \timer
+Used module:     $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000
+Used module:     $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx
+Used module:     $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000
+Used module:     \simple_interconnect
+Used module:     \rv32i_core_pipeline
+Used module:         \alu
+Used module:         \forwarding_unit
+Used module:         \regfile
+Used module:         \imm_gen
+Used module:         \hazard_unit
+Used module:         \control_unit
+
+17.6. Analyzing design hierarchy..
+Top module:  \rv32i_mini_soc
+Used module:     \timer
+Used module:     $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000
+Used module:     $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx
+Used module:     $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000
+Used module:     \simple_interconnect
+Used module:     \rv32i_core_pipeline
+Used module:         \alu
+Used module:         \forwarding_unit
+Used module:         \regfile
+Used module:         \imm_gen
+Used module:         \hazard_unit
+Used module:         \control_unit
+Removing unused module `\gpio'.
+Removing unused module `\uart_tx'.
+Removing unused module `\data_ram'.
+Removed 3 unused modules.
+
+18. Executing SYNTH pass.
+
+18.1. Executing HIERARCHY pass (managing design hierarchy).
+
+18.1.1. Analyzing design hierarchy..
+Top module:  \rv32i_mini_soc
+Used module:     \timer
+Used module:     $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000
+Used module:     $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx
+Used module:     $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000
+Used module:     \simple_interconnect
+Used module:     \rv32i_core_pipeline
+Used module:         \alu
+Used module:         \forwarding_unit
+Used module:         \regfile
+Used module:         \imm_gen
+Used module:         \hazard_unit
+Used module:         \control_unit
+
+18.1.2. Analyzing design hierarchy..
+Top module:  \rv32i_mini_soc
+Used module:     \timer
+Used module:     $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000
+Used module:     $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx
+Used module:     $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000
+Used module:     \simple_interconnect
+Used module:     \rv32i_core_pipeline
+Used module:         \alu
+Used module:         \forwarding_unit
+Used module:         \regfile
+Used module:         \imm_gen
+Used module:         \hazard_unit
+Used module:         \control_unit
+Removed 0 unused modules.
+
+18.2. Executing PROC pass (convert processes to netlists).
+
+18.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+18.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 3 switch rules as full_case in process $proc$rtl/peripherals/timer.sv:35$254 in module timer.
+Marked 2 switch rules as full_case in process $proc$rtl/peripherals/timer.sv:22$252 in module timer.
+Marked 4 switch rules as full_case in process $proc$rtl/memory/data_ram.sv:20$353 in module $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.
+Marked 4 switch rules as full_case in process $proc$rtl/peripherals/uart_tx.sv:34$339 in module $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx.
+Marked 5 switch rules as full_case in process $proc$rtl/bus/simple_interconnect.sv:71$161 in module simple_interconnect.
+Marked 2 switch rules as full_case in process $proc$rtl/peripherals/gpio.sv:34$265 in module $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000.
+Marked 2 switch rules as full_case in process $proc$rtl/peripherals/gpio.sv:22$263 in module $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000.
+Marked 3 switch rules as full_case in process $proc$rtl/cpu/rv32i_core_pipeline.sv:369$106 in module rv32i_core_pipeline.
+Marked 1 switch rules as full_case in process $proc$rtl/cpu/rv32i_core_pipeline.sv:358$102 in module rv32i_core_pipeline.
+Marked 2 switch rules as full_case in process $proc$rtl/cpu/rv32i_core_pipeline.sv:332$99 in module rv32i_core_pipeline.
+Marked 1 switch rules as full_case in process $proc$rtl/cpu/rv32i_core_pipeline.sv:321$96 in module rv32i_core_pipeline.
+Marked 3 switch rules as full_case in process $proc$rtl/cpu/rv32i_core_pipeline.sv:283$87 in module rv32i_core_pipeline.
+Marked 1 switch rules as full_case in process $proc$rtl/cpu/rv32i_core_pipeline.sv:269$82 in module rv32i_core_pipeline.
+Marked 2 switch rules as full_case in process $proc$rtl/cpu/rv32i_core_pipeline.sv:241$79 in module rv32i_core_pipeline.
+Marked 1 switch rules as full_case in process $proc$rtl/cpu/rv32i_core_pipeline.sv:212$74 in module rv32i_core_pipeline.
+Marked 2 switch rules as full_case in process $proc$rtl/cpu/rv32i_core_pipeline.sv:195$65 in module rv32i_core_pipeline.
+Marked 1 switch rules as full_case in process $proc$rtl/cpu/hazard_unit.sv:13$52 in module hazard_unit.
+Marked 3 switch rules as full_case in process $proc$rtl/cpu/forwarding_unit.sv:37$43 in module forwarding_unit.
+Marked 3 switch rules as full_case in process $proc$rtl/cpu/forwarding_unit.sv:21$34 in module forwarding_unit.
+Removed 1 dead cases from process $proc$rtl/cpu/control_unit.sv:51$29 in module control_unit.
+Marked 15 switch rules as full_case in process $proc$rtl/cpu/control_unit.sv:51$29 in module control_unit.
+Marked 1 switch rules as full_case in process $proc$rtl/cpu/imm_gen.sv:41$28 in module imm_gen.
+Marked 1 switch rules as full_case in process $proc$rtl/cpu/regfile.sv:20$19 in module regfile.
+Marked 1 switch rules as full_case in process $proc$rtl/cpu/alu.sv:21$1 in module alu.
+Removed a total of 1 dead cases.
+
+18.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 41 redundant assignments.
+Promoted 53 assignments to connections.
+
+18.2.4. Executing PROC_INIT pass (extract init attributes).
+
+18.2.5. Executing PROC_ARST pass (detect async resets in processes).
+
+18.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~168 debug messages>
+
+18.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\timer.$proc$rtl/peripherals/timer.sv:35$254'.
+     1/11: $0\compare_value[31:0] [31:24]
+     2/11: $0\compare_value[31:0] [23:16]
+     3/11: $0\compare_value[31:0] [15:8]
+     4/11: $0\compare_value[31:0] [7:0]
+     5/11: $2$fordecl_block$249.lane[31:0]$258
+     6/11: $1$fordecl_block$249.lane[31:0]$256
+     7/11: $0\pending[0:0]
+     8/11: $0\irq_enable[0:0]
+     9/11: $0\enable[0:0]
+    10/11: $3$fordecl_block$249.lane[31:0]$259
+    11/11: $0\count[31:0]
+Creating decoders for process `\timer.$proc$rtl/peripherals/timer.sv:22$252'.
+     1/2: $2\read_data_o[31:0]
+     2/2: $1\read_data_o[31:0]
+Creating decoders for process `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.$proc$rtl/memory/data_ram.sv:20$353'.
+     1/12: $1$memwr$\memory$rtl/memory/data_ram.sv:24$351_EN[31:0]$378
+     2/12: $1$memwr$\memory$rtl/memory/data_ram.sv:24$351_DATA[31:0]$377
+     3/12: $1$memwr$\memory$rtl/memory/data_ram.sv:24$351_ADDR[29:0]$376
+     4/12: $1$memwr$\memory$rtl/memory/data_ram.sv:24$350_EN[31:0]$375
+     5/12: $1$memwr$\memory$rtl/memory/data_ram.sv:24$350_DATA[31:0]$374
+     6/12: $1$memwr$\memory$rtl/memory/data_ram.sv:24$350_ADDR[29:0]$373
+     7/12: $1$memwr$\memory$rtl/memory/data_ram.sv:24$349_EN[31:0]$372
+     8/12: $1$memwr$\memory$rtl/memory/data_ram.sv:24$349_DATA[31:0]$371
+     9/12: $1$memwr$\memory$rtl/memory/data_ram.sv:24$349_ADDR[29:0]$370
+    10/12: $1$memwr$\memory$rtl/memory/data_ram.sv:24$348_EN[31:0]$369
+    11/12: $1$memwr$\memory$rtl/memory/data_ram.sv:24$348_DATA[31:0]$368
+    12/12: $1$memwr$\memory$rtl/memory/data_ram.sv:24$348_ADDR[29:0]$367
+Creating decoders for process `$paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx.$proc$rtl/peripherals/uart_tx.sv:34$339'.
+     1/4: $0\busy[0:0]
+     2/4: $0\bit_index[3:0]
+     3/4: $0\frame[9:0]
+     4/4: $0\baud_count[8:0]
+Creating decoders for process `\simple_interconnect.$proc$rtl/bus/simple_interconnect.sv:71$161'.
+     1/5: $5\cpu_read_data_o[31:0]
+     2/5: $4\cpu_read_data_o[31:0]
+     3/5: $3\cpu_read_data_o[31:0]
+     4/5: $2\cpu_read_data_o[31:0]
+     5/5: $1\cpu_read_data_o[31:0]
+Creating decoders for process `$paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000.$proc$rtl/peripherals/gpio.sv:34$265'.
+     1/66: $0\gpio_dir_o[31:0] [31]
+     2/66: $0\gpio_dir_o[31:0] [30]
+     3/66: $0\gpio_out_o[31:0] [30]
+     4/66: $0\gpio_dir_o[31:0] [29]
+     5/66: $0\gpio_out_o[31:0] [29]
+     6/66: $0\gpio_dir_o[31:0] [28]
+     7/66: $0\gpio_out_o[31:0] [28]
+     8/66: $0\gpio_dir_o[31:0] [27]
+     9/66: $0\gpio_out_o[31:0] [27]
+    10/66: $0\gpio_dir_o[31:0] [26]
+    11/66: $0\gpio_out_o[31:0] [26]
+    12/66: $0\gpio_dir_o[31:0] [25]
+    13/66: $0\gpio_out_o[31:0] [25]
+    14/66: $0\gpio_dir_o[31:0] [24]
+    15/66: $0\gpio_out_o[31:0] [24]
+    16/66: $0\gpio_dir_o[31:0] [23]
+    17/66: $0\gpio_out_o[31:0] [23]
+    18/66: $0\gpio_dir_o[31:0] [22]
+    19/66: $0\gpio_out_o[31:0] [22]
+    20/66: $0\gpio_dir_o[31:0] [21]
+    21/66: $0\gpio_out_o[31:0] [21]
+    22/66: $0\gpio_dir_o[31:0] [20]
+    23/66: $0\gpio_out_o[31:0] [20]
+    24/66: $0\gpio_dir_o[31:0] [19]
+    25/66: $0\gpio_out_o[31:0] [19]
+    26/66: $0\gpio_dir_o[31:0] [18]
+    27/66: $0\gpio_out_o[31:0] [18]
+    28/66: $0\gpio_dir_o[31:0] [17]
+    29/66: $0\gpio_out_o[31:0] [17]
+    30/66: $0\gpio_dir_o[31:0] [16]
+    31/66: $0\gpio_out_o[31:0] [16]
+    32/66: $0\gpio_dir_o[31:0] [15]
+    33/66: $0\gpio_out_o[31:0] [15]
+    34/66: $0\gpio_dir_o[31:0] [14]
+    35/66: $0\gpio_out_o[31:0] [14]
+    36/66: $0\gpio_dir_o[31:0] [13]
+    37/66: $0\gpio_out_o[31:0] [13]
+    38/66: $0\gpio_dir_o[31:0] [12]
+    39/66: $0\gpio_out_o[31:0] [12]
+    40/66: $0\gpio_dir_o[31:0] [11]
+    41/66: $0\gpio_out_o[31:0] [11]
+    42/66: $0\gpio_dir_o[31:0] [10]
+    43/66: $0\gpio_out_o[31:0] [10]
+    44/66: $0\gpio_dir_o[31:0] [9]
+    45/66: $0\gpio_out_o[31:0] [9]
+    46/66: $0\gpio_dir_o[31:0] [8]
+    47/66: $0\gpio_out_o[31:0] [8]
+    48/66: $0\gpio_dir_o[31:0] [7]
+    49/66: $0\gpio_out_o[31:0] [7]
+    50/66: $0\gpio_dir_o[31:0] [6]
+    51/66: $0\gpio_out_o[31:0] [6]
+    52/66: $0\gpio_dir_o[31:0] [5]
+    53/66: $0\gpio_out_o[31:0] [5]
+    54/66: $0\gpio_dir_o[31:0] [4]
+    55/66: $0\gpio_out_o[31:0] [4]
+    56/66: $0\gpio_dir_o[31:0] [3]
+    57/66: $0\gpio_out_o[31:0] [3]
+    58/66: $0\gpio_dir_o[31:0] [2]
+    59/66: $0\gpio_out_o[31:0] [2]
+    60/66: $0\gpio_dir_o[31:0] [1]
+    61/66: $0\gpio_out_o[31:0] [1]
+    62/66: $0\gpio_dir_o[31:0] [0]
+    63/66: $0\gpio_out_o[31:0] [0]
+    64/66: $1$fordecl_block$176.bit_index[31:0]$267
+    65/66: $0\gpio_out_o[31:0] [31]
+    66/66: $2$fordecl_block$176.bit_index[31:0]$269
+Creating decoders for process `$paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000.$proc$rtl/peripherals/gpio.sv:22$263'.
+     1/2: $2\read_data_o[31:0]
+     2/2: $1\read_data_o[31:0]
+Creating decoders for process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:369$106'.
+     1/41: $0\mem_wb_writeback_source_q[1:0]
+     2/41: $0\mem_wb_register_write_q[0:0]
+     3/41: $0\mem_wb_destination_q[4:0]
+     4/41: $0\mem_wb_pc_plus_four_q[31:0]
+     5/41: $0\mem_wb_load_data_q[31:0]
+     6/41: $0\mem_wb_alu_result_q[31:0]
+     7/41: $0\mem_wb_valid_q[0:0]
+     8/41: $0\ex_mem_writeback_source_q[1:0]
+     9/41: $0\ex_mem_load_unsigned_q[0:0]
+    10/41: $0\ex_mem_memory_size_q[1:0]
+    11/41: $0\ex_mem_memory_write_q[0:0]
+    12/41: $0\ex_mem_memory_read_q[0:0]
+    13/41: $0\ex_mem_register_write_q[0:0]
+    14/41: $0\ex_mem_destination_q[4:0]
+    15/41: $0\ex_mem_pc_plus_four_q[31:0]
+    16/41: $0\ex_mem_store_data_q[31:0]
+    17/41: $0\ex_mem_alu_result_q[31:0]
+    18/41: $0\ex_mem_valid_q[0:0]
+    19/41: $0\id_ex_jump_control_q[1:0]
+    20/41: $0\id_ex_branch_control_q[2:0]
+    21/41: $0\id_ex_writeback_source_q[1:0]
+    22/41: $0\id_ex_load_unsigned_q[0:0]
+    23/41: $0\id_ex_memory_size_q[1:0]
+    24/41: $0\id_ex_memory_write_q[0:0]
+    25/41: $0\id_ex_memory_read_q[0:0]
+    26/41: $0\id_ex_alu_operation_q[3:0]
+    27/41: $0\id_ex_alu_src_b_q[1:0]
+    28/41: $0\id_ex_alu_src_a_q[1:0]
+    29/41: $0\id_ex_register_write_q[0:0]
+    30/41: $0\id_ex_destination_q[4:0]
+    31/41: $0\id_ex_source_b_q[4:0]
+    32/41: $0\id_ex_source_a_q[4:0]
+    33/41: $0\id_ex_immediate_q[31:0]
+    34/41: $0\id_ex_register_data_b_q[31:0]
+    35/41: $0\id_ex_register_data_a_q[31:0]
+    36/41: $0\id_ex_pc_q[31:0]
+    37/41: $0\id_ex_valid_q[0:0]
+    38/41: $0\if_id_instruction_q[31:0]
+    39/41: $0\if_id_pc_q[31:0]
+    40/41: $0\if_id_valid_q[0:0]
+    41/41: $0\pc_q[31:0]
+Creating decoders for process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:358$102'.
+     1/1: $1\wb_write_data[31:0]
+Creating decoders for process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:332$99'.
+     1/4: $2\data_write_strobe_o[3:0]
+     2/4: $2\data_write_data_o[31:0]
+     3/4: $1\data_write_data_o[31:0]
+     4/4: $1\data_write_strobe_o[3:0]
+Creating decoders for process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:321$96'.
+     1/1: $1\mem_load_data[31:0]
+Creating decoders for process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:283$87'.
+     1/6: $3\ex_redirect_target[31:0]
+     2/6: $3\ex_redirect[0:0]
+     3/6: $2\ex_redirect_target[31:0]
+     4/6: $2\ex_redirect[0:0]
+     5/6: $1\ex_redirect_target[31:0]
+     6/6: $1\ex_redirect[0:0]
+Creating decoders for process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:269$82'.
+     1/1: $1\ex_branch_taken[0:0]
+Creating decoders for process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:241$79'.
+     1/2: $1\ex_alu_rhs[31:0]
+     2/2: $1\ex_alu_lhs[31:0]
+Creating decoders for process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:212$74'.
+     1/1: $1\ex_mem_forward_data[31:0]
+Creating decoders for process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:195$65'.
+     1/2: $1\id_register_data_b_bypassed[31:0]
+     2/2: $1\id_register_data_a_bypassed[31:0]
+Creating decoders for process `\hazard_unit.$proc$rtl/cpu/hazard_unit.sv:13$52'.
+     1/1: $1\load_use_stall_o[0:0]
+Creating decoders for process `\forwarding_unit.$proc$rtl/cpu/forwarding_unit.sv:37$43'.
+     1/3: $3\forwarded_data_b_o[31:0]
+     2/3: $2\forwarded_data_b_o[31:0]
+     3/3: $1\forwarded_data_b_o[31:0]
+Creating decoders for process `\forwarding_unit.$proc$rtl/cpu/forwarding_unit.sv:21$34'.
+     1/3: $3\forwarded_data_a_o[31:0]
+     2/3: $2\forwarded_data_a_o[31:0]
+     3/3: $1\forwarded_data_a_o[31:0]
+Creating decoders for process `\control_unit.$proc$rtl/cpu/control_unit.sv:51$29'.
+     1/62: $5\register_write_o[0:0]
+     2/62: $4\rs2_used_o[0:0]
+     3/62: $7\rs1_used_o[0:0]
+     4/62: $7\alu_op_o[3:0]
+     5/62: $10\instruction_valid_o[0:0]
+     6/62: $6\immediate_format_o[2:0]
+     7/62: $5\alu_src_b_o[1:0]
+     8/62: $4\register_write_o[0:0]
+     9/62: $6\rs1_used_o[0:0]
+    10/62: $6\alu_op_o[3:0]
+    11/62: $9\instruction_valid_o[0:0]
+    12/62: $5\alu_op_o[3:0]
+    13/62: $8\instruction_valid_o[0:0]
+    14/62: $4\alu_op_o[3:0]
+    15/62: $7\instruction_valid_o[0:0]
+    16/62: $3\alu_op_o[3:0]
+    17/62: $6\instruction_valid_o[0:0]
+    18/62: $2\memory_write_o[0:0]
+    19/62: $5\immediate_format_o[2:0]
+    20/62: $4\alu_src_b_o[1:0]
+    21/62: $3\rs2_used_o[0:0]
+    22/62: $5\rs1_used_o[0:0]
+    23/62: $3\memory_size_o[1:0]
+    24/62: $5\instruction_valid_o[0:0]
+    25/62: $3\writeback_source_o[1:0]
+    26/62: $2\memory_read_o[0:0]
+    27/62: $4\immediate_format_o[2:0]
+    28/62: $3\alu_src_b_o[1:0]
+    29/62: $3\register_write_o[0:0]
+    30/62: $4\rs1_used_o[0:0]
+    31/62: $2\memory_size_o[1:0]
+    32/62: $4\instruction_valid_o[0:0]
+    33/62: $2\load_unsigned_o[0:0]
+    34/62: $3\immediate_format_o[2:0]
+    35/62: $2\rs2_used_o[0:0]
+    36/62: $3\rs1_used_o[0:0]
+    37/62: $2\branch_control_o[2:0]
+    38/62: $2\alu_op_o[3:0]
+    39/62: $3\instruction_valid_o[0:0]
+    40/62: $2\jump_control_o[1:0]
+    41/62: $2\writeback_source_o[1:0]
+    42/62: $2\immediate_format_o[2:0]
+    43/62: $2\alu_src_b_o[1:0]
+    44/62: $2\alu_src_a_o[1:0]
+    45/62: $2\register_write_o[0:0]
+    46/62: $2\rs1_used_o[0:0]
+    47/62: $2\instruction_valid_o[0:0]
+    48/62: $1\immediate_format_o[2:0]
+    49/62: $1\alu_src_b_o[1:0]
+    50/62: $1\alu_src_a_o[1:0]
+    51/62: $1\register_write_o[0:0]
+    52/62: $1\instruction_valid_o[0:0]
+    53/62: $1\jump_control_o[1:0]
+    54/62: $1\branch_control_o[2:0]
+    55/62: $1\writeback_source_o[1:0]
+    56/62: $1\load_unsigned_o[0:0]
+    57/62: $1\memory_size_o[1:0]
+    58/62: $1\memory_write_o[0:0]
+    59/62: $1\memory_read_o[0:0]
+    60/62: $1\alu_op_o[3:0]
+    61/62: $1\rs2_used_o[0:0]
+    62/62: $1\rs1_used_o[0:0]
+Creating decoders for process `\imm_gen.$proc$rtl/cpu/imm_gen.sv:41$28'.
+     1/1: $1\immediate_o[31:0]
+Creating decoders for process `\regfile.$proc$rtl/cpu/regfile.sv:20$19'.
+     1/3: $1$memwr$\registers$rtl/cpu/regfile.sv:22$12_EN[31:0]$27
+     2/3: $1$memwr$\registers$rtl/cpu/regfile.sv:22$12_DATA[31:0]$26
+     3/3: $1$memwr$\registers$rtl/cpu/regfile.sv:22$12_ADDR[4:0]$25
+Creating decoders for process `\alu.$proc$rtl/cpu/alu.sv:21$1'.
+     1/1: $1\result_o[31:0]
+
+18.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\timer.\read_data_o' from process `\timer.$proc$rtl/peripherals/timer.sv:22$252'.
+No latch inferred for signal `\simple_interconnect.\cpu_read_data_o' from process `\simple_interconnect.$proc$rtl/bus/simple_interconnect.sv:71$161'.
+No latch inferred for signal `$paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000.\read_data_o' from process `$paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000.$proc$rtl/peripherals/gpio.sv:22$263'.
+No latch inferred for signal `\rv32i_core_pipeline.\wb_write_data' from process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:358$102'.
+No latch inferred for signal `\rv32i_core_pipeline.\data_write_strobe_o' from process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:332$99'.
+No latch inferred for signal `\rv32i_core_pipeline.\data_write_data_o' from process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:332$99'.
+No latch inferred for signal `\rv32i_core_pipeline.\mem_load_data' from process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:321$96'.
+No latch inferred for signal `\rv32i_core_pipeline.\ex_redirect' from process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:283$87'.
+No latch inferred for signal `\rv32i_core_pipeline.\ex_redirect_target' from process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:283$87'.
+No latch inferred for signal `\rv32i_core_pipeline.\ex_branch_taken' from process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:269$82'.
+No latch inferred for signal `\rv32i_core_pipeline.\ex_alu_lhs' from process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:241$79'.
+No latch inferred for signal `\rv32i_core_pipeline.\ex_alu_rhs' from process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:241$79'.
+No latch inferred for signal `\rv32i_core_pipeline.\ex_mem_forward_data' from process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:212$74'.
+No latch inferred for signal `\rv32i_core_pipeline.\id_register_data_a_bypassed' from process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:195$65'.
+No latch inferred for signal `\rv32i_core_pipeline.\id_register_data_b_bypassed' from process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:195$65'.
+No latch inferred for signal `\hazard_unit.\load_use_stall_o' from process `\hazard_unit.$proc$rtl/cpu/hazard_unit.sv:13$52'.
+No latch inferred for signal `\forwarding_unit.\forwarded_data_b_o' from process `\forwarding_unit.$proc$rtl/cpu/forwarding_unit.sv:37$43'.
+No latch inferred for signal `\forwarding_unit.\forwarded_data_a_o' from process `\forwarding_unit.$proc$rtl/cpu/forwarding_unit.sv:21$34'.
+No latch inferred for signal `\control_unit.\instruction_valid_o' from process `\control_unit.$proc$rtl/cpu/control_unit.sv:51$29'.
+No latch inferred for signal `\control_unit.\rs1_used_o' from process `\control_unit.$proc$rtl/cpu/control_unit.sv:51$29'.
+No latch inferred for signal `\control_unit.\rs2_used_o' from process `\control_unit.$proc$rtl/cpu/control_unit.sv:51$29'.
+No latch inferred for signal `\control_unit.\register_write_o' from process `\control_unit.$proc$rtl/cpu/control_unit.sv:51$29'.
+No latch inferred for signal `\control_unit.\alu_src_a_o' from process `\control_unit.$proc$rtl/cpu/control_unit.sv:51$29'.
+No latch inferred for signal `\control_unit.\alu_src_b_o' from process `\control_unit.$proc$rtl/cpu/control_unit.sv:51$29'.
+No latch inferred for signal `\control_unit.\alu_op_o' from process `\control_unit.$proc$rtl/cpu/control_unit.sv:51$29'.
+No latch inferred for signal `\control_unit.\immediate_format_o' from process `\control_unit.$proc$rtl/cpu/control_unit.sv:51$29'.
+No latch inferred for signal `\control_unit.\memory_read_o' from process `\control_unit.$proc$rtl/cpu/control_unit.sv:51$29'.
+No latch inferred for signal `\control_unit.\memory_write_o' from process `\control_unit.$proc$rtl/cpu/control_unit.sv:51$29'.
+No latch inferred for signal `\control_unit.\memory_size_o' from process `\control_unit.$proc$rtl/cpu/control_unit.sv:51$29'.
+No latch inferred for signal `\control_unit.\load_unsigned_o' from process `\control_unit.$proc$rtl/cpu/control_unit.sv:51$29'.
+No latch inferred for signal `\control_unit.\writeback_source_o' from process `\control_unit.$proc$rtl/cpu/control_unit.sv:51$29'.
+No latch inferred for signal `\control_unit.\branch_control_o' from process `\control_unit.$proc$rtl/cpu/control_unit.sv:51$29'.
+No latch inferred for signal `\control_unit.\jump_control_o' from process `\control_unit.$proc$rtl/cpu/control_unit.sv:51$29'.
+No latch inferred for signal `\imm_gen.\immediate_o' from process `\imm_gen.$proc$rtl/cpu/imm_gen.sv:41$28'.
+No latch inferred for signal `\alu.\result_o' from process `\alu.$proc$rtl/cpu/alu.sv:21$1'.
+
+18.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\timer.\count' using process `\timer.$proc$rtl/peripherals/timer.sv:35$254'.
+  created $dff cell `$procdff$2329' with positive edge clock.
+Creating register for signal `\timer.\compare_value' using process `\timer.$proc$rtl/peripherals/timer.sv:35$254'.
+  created $dff cell `$procdff$2330' with positive edge clock.
+Creating register for signal `\timer.\enable' using process `\timer.$proc$rtl/peripherals/timer.sv:35$254'.
+  created $dff cell `$procdff$2331' with positive edge clock.
+Creating register for signal `\timer.\irq_enable' using process `\timer.$proc$rtl/peripherals/timer.sv:35$254'.
+  created $dff cell `$procdff$2332' with positive edge clock.
+Creating register for signal `\timer.\pending' using process `\timer.$proc$rtl/peripherals/timer.sv:35$254'.
+  created $dff cell `$procdff$2333' with positive edge clock.
+Creating register for signal `\timer.$fordecl_block$249.lane' using process `\timer.$proc$rtl/peripherals/timer.sv:35$254'.
+  created $dff cell `$procdff$2334' with positive edge clock.
+Creating register for signal `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.$fordecl_block$108.lane' using process `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.$proc$rtl/memory/data_ram.sv:20$353'.
+  created $dff cell `$procdff$2335' with positive edge clock.
+Creating register for signal `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.$memwr$\memory$rtl/memory/data_ram.sv:24$348_ADDR' using process `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.$proc$rtl/memory/data_ram.sv:20$353'.
+  created $dff cell `$procdff$2336' with positive edge clock.
+Creating register for signal `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.$memwr$\memory$rtl/memory/data_ram.sv:24$348_DATA' using process `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.$proc$rtl/memory/data_ram.sv:20$353'.
+  created $dff cell `$procdff$2337' with positive edge clock.
+Creating register for signal `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.$memwr$\memory$rtl/memory/data_ram.sv:24$348_EN' using process `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.$proc$rtl/memory/data_ram.sv:20$353'.
+  created $dff cell `$procdff$2338' with positive edge clock.
+Creating register for signal `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.$memwr$\memory$rtl/memory/data_ram.sv:24$349_ADDR' using process `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.$proc$rtl/memory/data_ram.sv:20$353'.
+  created $dff cell `$procdff$2339' with positive edge clock.
+Creating register for signal `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.$memwr$\memory$rtl/memory/data_ram.sv:24$349_DATA' using process `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.$proc$rtl/memory/data_ram.sv:20$353'.
+  created $dff cell `$procdff$2340' with positive edge clock.
+Creating register for signal `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.$memwr$\memory$rtl/memory/data_ram.sv:24$349_EN' using process `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.$proc$rtl/memory/data_ram.sv:20$353'.
+  created $dff cell `$procdff$2341' with positive edge clock.
+Creating register for signal `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.$memwr$\memory$rtl/memory/data_ram.sv:24$350_ADDR' using process `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.$proc$rtl/memory/data_ram.sv:20$353'.
+  created $dff cell `$procdff$2342' with positive edge clock.
+Creating register for signal `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.$memwr$\memory$rtl/memory/data_ram.sv:24$350_DATA' using process `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.$proc$rtl/memory/data_ram.sv:20$353'.
+  created $dff cell `$procdff$2343' with positive edge clock.
+Creating register for signal `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.$memwr$\memory$rtl/memory/data_ram.sv:24$350_EN' using process `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.$proc$rtl/memory/data_ram.sv:20$353'.
+  created $dff cell `$procdff$2344' with positive edge clock.
+Creating register for signal `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.$memwr$\memory$rtl/memory/data_ram.sv:24$351_ADDR' using process `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.$proc$rtl/memory/data_ram.sv:20$353'.
+  created $dff cell `$procdff$2345' with positive edge clock.
+Creating register for signal `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.$memwr$\memory$rtl/memory/data_ram.sv:24$351_DATA' using process `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.$proc$rtl/memory/data_ram.sv:20$353'.
+  created $dff cell `$procdff$2346' with positive edge clock.
+Creating register for signal `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.$memwr$\memory$rtl/memory/data_ram.sv:24$351_EN' using process `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.$proc$rtl/memory/data_ram.sv:20$353'.
+  created $dff cell `$procdff$2347' with positive edge clock.
+Creating register for signal `$paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx.\baud_count' using process `$paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx.$proc$rtl/peripherals/uart_tx.sv:34$339'.
+  created $dff cell `$procdff$2348' with positive edge clock.
+Creating register for signal `$paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx.\frame' using process `$paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx.$proc$rtl/peripherals/uart_tx.sv:34$339'.
+  created $dff cell `$procdff$2349' with positive edge clock.
+Creating register for signal `$paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx.\bit_index' using process `$paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx.$proc$rtl/peripherals/uart_tx.sv:34$339'.
+  created $dff cell `$procdff$2350' with positive edge clock.
+Creating register for signal `$paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx.\busy' using process `$paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx.$proc$rtl/peripherals/uart_tx.sv:34$339'.
+  created $dff cell `$procdff$2351' with positive edge clock.
+Creating register for signal `$paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000.\gpio_out_o' using process `$paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000.$proc$rtl/peripherals/gpio.sv:34$265'.
+  created $dff cell `$procdff$2352' with positive edge clock.
+Creating register for signal `$paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000.\gpio_dir_o' using process `$paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000.$proc$rtl/peripherals/gpio.sv:34$265'.
+  created $dff cell `$procdff$2353' with positive edge clock.
+Creating register for signal `$paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000.$fordecl_block$176.bit_index' using process `$paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000.$proc$rtl/peripherals/gpio.sv:34$265'.
+  created $dff cell `$procdff$2354' with positive edge clock.
+Creating register for signal `\rv32i_core_pipeline.\pc_q' using process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:369$106'.
+  created $dff cell `$procdff$2355' with positive edge clock.
+Creating register for signal `\rv32i_core_pipeline.\if_id_valid_q' using process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:369$106'.
+  created $dff cell `$procdff$2356' with positive edge clock.
+Creating register for signal `\rv32i_core_pipeline.\if_id_pc_q' using process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:369$106'.
+  created $dff cell `$procdff$2357' with positive edge clock.
+Creating register for signal `\rv32i_core_pipeline.\if_id_instruction_q' using process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:369$106'.
+  created $dff cell `$procdff$2358' with positive edge clock.
+Creating register for signal `\rv32i_core_pipeline.\id_ex_valid_q' using process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:369$106'.
+  created $dff cell `$procdff$2359' with positive edge clock.
+Creating register for signal `\rv32i_core_pipeline.\id_ex_pc_q' using process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:369$106'.
+  created $dff cell `$procdff$2360' with positive edge clock.
+Creating register for signal `\rv32i_core_pipeline.\id_ex_register_data_a_q' using process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:369$106'.
+  created $dff cell `$procdff$2361' with positive edge clock.
+Creating register for signal `\rv32i_core_pipeline.\id_ex_register_data_b_q' using process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:369$106'.
+  created $dff cell `$procdff$2362' with positive edge clock.
+Creating register for signal `\rv32i_core_pipeline.\id_ex_immediate_q' using process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:369$106'.
+  created $dff cell `$procdff$2363' with positive edge clock.
+Creating register for signal `\rv32i_core_pipeline.\id_ex_source_a_q' using process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:369$106'.
+  created $dff cell `$procdff$2364' with positive edge clock.
+Creating register for signal `\rv32i_core_pipeline.\id_ex_source_b_q' using process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:369$106'.
+  created $dff cell `$procdff$2365' with positive edge clock.
+Creating register for signal `\rv32i_core_pipeline.\id_ex_destination_q' using process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:369$106'.
+  created $dff cell `$procdff$2366' with positive edge clock.
+Creating register for signal `\rv32i_core_pipeline.\id_ex_register_write_q' using process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:369$106'.
+  created $dff cell `$procdff$2367' with positive edge clock.
+Creating register for signal `\rv32i_core_pipeline.\id_ex_alu_src_a_q' using process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:369$106'.
+  created $dff cell `$procdff$2368' with positive edge clock.
+Creating register for signal `\rv32i_core_pipeline.\id_ex_alu_src_b_q' using process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:369$106'.
+  created $dff cell `$procdff$2369' with positive edge clock.
+Creating register for signal `\rv32i_core_pipeline.\id_ex_alu_operation_q' using process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:369$106'.
+  created $dff cell `$procdff$2370' with positive edge clock.
+Creating register for signal `\rv32i_core_pipeline.\id_ex_memory_read_q' using process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:369$106'.
+  created $dff cell `$procdff$2371' with positive edge clock.
+Creating register for signal `\rv32i_core_pipeline.\id_ex_memory_write_q' using process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:369$106'.
+  created $dff cell `$procdff$2372' with positive edge clock.
+Creating register for signal `\rv32i_core_pipeline.\id_ex_memory_size_q' using process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:369$106'.
+  created $dff cell `$procdff$2373' with positive edge clock.
+Creating register for signal `\rv32i_core_pipeline.\id_ex_load_unsigned_q' using process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:369$106'.
+  created $dff cell `$procdff$2374' with positive edge clock.
+Creating register for signal `\rv32i_core_pipeline.\id_ex_writeback_source_q' using process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:369$106'.
+  created $dff cell `$procdff$2375' with positive edge clock.
+Creating register for signal `\rv32i_core_pipeline.\id_ex_branch_control_q' using process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:369$106'.
+  created $dff cell `$procdff$2376' with positive edge clock.
+Creating register for signal `\rv32i_core_pipeline.\id_ex_jump_control_q' using process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:369$106'.
+  created $dff cell `$procdff$2377' with positive edge clock.
+Creating register for signal `\rv32i_core_pipeline.\ex_mem_valid_q' using process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:369$106'.
+  created $dff cell `$procdff$2378' with positive edge clock.
+Creating register for signal `\rv32i_core_pipeline.\ex_mem_alu_result_q' using process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:369$106'.
+  created $dff cell `$procdff$2379' with positive edge clock.
+Creating register for signal `\rv32i_core_pipeline.\ex_mem_store_data_q' using process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:369$106'.
+  created $dff cell `$procdff$2380' with positive edge clock.
+Creating register for signal `\rv32i_core_pipeline.\ex_mem_pc_plus_four_q' using process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:369$106'.
+  created $dff cell `$procdff$2381' with positive edge clock.
+Creating register for signal `\rv32i_core_pipeline.\ex_mem_destination_q' using process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:369$106'.
+  created $dff cell `$procdff$2382' with positive edge clock.
+Creating register for signal `\rv32i_core_pipeline.\ex_mem_register_write_q' using process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:369$106'.
+  created $dff cell `$procdff$2383' with positive edge clock.
+Creating register for signal `\rv32i_core_pipeline.\ex_mem_memory_read_q' using process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:369$106'.
+  created $dff cell `$procdff$2384' with positive edge clock.
+Creating register for signal `\rv32i_core_pipeline.\ex_mem_memory_write_q' using process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:369$106'.
+  created $dff cell `$procdff$2385' with positive edge clock.
+Creating register for signal `\rv32i_core_pipeline.\ex_mem_memory_size_q' using process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:369$106'.
+  created $dff cell `$procdff$2386' with positive edge clock.
+Creating register for signal `\rv32i_core_pipeline.\ex_mem_load_unsigned_q' using process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:369$106'.
+  created $dff cell `$procdff$2387' with positive edge clock.
+Creating register for signal `\rv32i_core_pipeline.\ex_mem_writeback_source_q' using process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:369$106'.
+  created $dff cell `$procdff$2388' with positive edge clock.
+Creating register for signal `\rv32i_core_pipeline.\mem_wb_valid_q' using process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:369$106'.
+  created $dff cell `$procdff$2389' with positive edge clock.
+Creating register for signal `\rv32i_core_pipeline.\mem_wb_alu_result_q' using process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:369$106'.
+  created $dff cell `$procdff$2390' with positive edge clock.
+Creating register for signal `\rv32i_core_pipeline.\mem_wb_load_data_q' using process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:369$106'.
+  created $dff cell `$procdff$2391' with positive edge clock.
+Creating register for signal `\rv32i_core_pipeline.\mem_wb_pc_plus_four_q' using process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:369$106'.
+  created $dff cell `$procdff$2392' with positive edge clock.
+Creating register for signal `\rv32i_core_pipeline.\mem_wb_destination_q' using process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:369$106'.
+  created $dff cell `$procdff$2393' with positive edge clock.
+Creating register for signal `\rv32i_core_pipeline.\mem_wb_register_write_q' using process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:369$106'.
+  created $dff cell `$procdff$2394' with positive edge clock.
+Creating register for signal `\rv32i_core_pipeline.\mem_wb_writeback_source_q' using process `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:369$106'.
+  created $dff cell `$procdff$2395' with positive edge clock.
+Creating register for signal `\regfile.$memwr$\registers$rtl/cpu/regfile.sv:22$12_ADDR' using process `\regfile.$proc$rtl/cpu/regfile.sv:20$19'.
+  created $dff cell `$procdff$2396' with positive edge clock.
+Creating register for signal `\regfile.$memwr$\registers$rtl/cpu/regfile.sv:22$12_DATA' using process `\regfile.$proc$rtl/cpu/regfile.sv:20$19'.
+  created $dff cell `$procdff$2397' with positive edge clock.
+Creating register for signal `\regfile.$memwr$\registers$rtl/cpu/regfile.sv:22$12_EN' using process `\regfile.$proc$rtl/cpu/regfile.sv:20$19'.
+  created $dff cell `$procdff$2398' with positive edge clock.
+
+18.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+18.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 11 empty switches in `\timer.$proc$rtl/peripherals/timer.sv:35$254'.
+Removing empty process `timer.$proc$rtl/peripherals/timer.sv:35$254'.
+Found and cleaned up 2 empty switches in `\timer.$proc$rtl/peripherals/timer.sv:22$252'.
+Removing empty process `timer.$proc$rtl/peripherals/timer.sv:22$252'.
+Found and cleaned up 4 empty switches in `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.$proc$rtl/memory/data_ram.sv:20$353'.
+Removing empty process `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.$proc$rtl/memory/data_ram.sv:20$353'.
+Found and cleaned up 5 empty switches in `$paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx.$proc$rtl/peripherals/uart_tx.sv:34$339'.
+Removing empty process `$paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx.$proc$rtl/peripherals/uart_tx.sv:34$339'.
+Found and cleaned up 5 empty switches in `\simple_interconnect.$proc$rtl/bus/simple_interconnect.sv:71$161'.
+Removing empty process `simple_interconnect.$proc$rtl/bus/simple_interconnect.sv:71$161'.
+Found and cleaned up 98 empty switches in `$paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000.$proc$rtl/peripherals/gpio.sv:34$265'.
+Removing empty process `$paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000.$proc$rtl/peripherals/gpio.sv:34$265'.
+Found and cleaned up 2 empty switches in `$paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000.$proc$rtl/peripherals/gpio.sv:22$263'.
+Removing empty process `$paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000.$proc$rtl/peripherals/gpio.sv:22$263'.
+Found and cleaned up 3 empty switches in `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:369$106'.
+Removing empty process `rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:369$106'.
+Found and cleaned up 1 empty switch in `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:358$102'.
+Removing empty process `rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:358$102'.
+Found and cleaned up 2 empty switches in `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:332$99'.
+Removing empty process `rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:332$99'.
+Found and cleaned up 1 empty switch in `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:321$96'.
+Removing empty process `rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:321$96'.
+Found and cleaned up 3 empty switches in `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:283$87'.
+Removing empty process `rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:283$87'.
+Found and cleaned up 1 empty switch in `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:269$82'.
+Removing empty process `rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:269$82'.
+Found and cleaned up 2 empty switches in `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:241$79'.
+Removing empty process `rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:241$79'.
+Found and cleaned up 1 empty switch in `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:212$74'.
+Removing empty process `rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:212$74'.
+Found and cleaned up 2 empty switches in `\rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:195$65'.
+Removing empty process `rv32i_core_pipeline.$proc$rtl/cpu/rv32i_core_pipeline.sv:195$65'.
+Found and cleaned up 1 empty switch in `\hazard_unit.$proc$rtl/cpu/hazard_unit.sv:13$52'.
+Removing empty process `hazard_unit.$proc$rtl/cpu/hazard_unit.sv:13$52'.
+Found and cleaned up 3 empty switches in `\forwarding_unit.$proc$rtl/cpu/forwarding_unit.sv:37$43'.
+Removing empty process `forwarding_unit.$proc$rtl/cpu/forwarding_unit.sv:37$43'.
+Found and cleaned up 3 empty switches in `\forwarding_unit.$proc$rtl/cpu/forwarding_unit.sv:21$34'.
+Removing empty process `forwarding_unit.$proc$rtl/cpu/forwarding_unit.sv:21$34'.
+Found and cleaned up 15 empty switches in `\control_unit.$proc$rtl/cpu/control_unit.sv:51$29'.
+Removing empty process `control_unit.$proc$rtl/cpu/control_unit.sv:51$29'.
+Found and cleaned up 1 empty switch in `\imm_gen.$proc$rtl/cpu/imm_gen.sv:41$28'.
+Removing empty process `imm_gen.$proc$rtl/cpu/imm_gen.sv:41$28'.
+Found and cleaned up 1 empty switch in `\regfile.$proc$rtl/cpu/regfile.sv:20$19'.
+Removing empty process `regfile.$proc$rtl/cpu/regfile.sv:20$19'.
+Found and cleaned up 1 empty switch in `\alu.$proc$rtl/cpu/alu.sv:21$1'.
+Removing empty process `alu.$proc$rtl/cpu/alu.sv:21$1'.
+Cleaned up 168 empty switches.
+
+18.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module rv32i_mini_soc.
+Optimizing module timer.
+<suppressed ~1 debug messages>
+Optimizing module $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.
+Optimizing module $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx.
+<suppressed ~1 debug messages>
+Optimizing module simple_interconnect.
+<suppressed ~1 debug messages>
+Optimizing module $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000.
+<suppressed ~33 debug messages>
+Optimizing module rv32i_core_pipeline.
+<suppressed ~11 debug messages>
+Optimizing module hazard_unit.
+<suppressed ~1 debug messages>
+Optimizing module forwarding_unit.
+<suppressed ~4 debug messages>
+Optimizing module control_unit.
+<suppressed ~13 debug messages>
+Optimizing module imm_gen.
+<suppressed ~1 debug messages>
+Optimizing module regfile.
+<suppressed ~3 debug messages>
+Optimizing module alu.
+<suppressed ~1 debug messages>
+
+18.3. Executing OPT_EXPR pass (perform const folding).
+Optimizing module rv32i_mini_soc.
+Optimizing module timer.
+Optimizing module $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.
+Optimizing module $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx.
+Optimizing module simple_interconnect.
+Optimizing module $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000.
+Optimizing module rv32i_core_pipeline.
+Optimizing module hazard_unit.
+Optimizing module forwarding_unit.
+Optimizing module control_unit.
+Optimizing module imm_gen.
+Optimizing module regfile.
+Optimizing module alu.
+
+18.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \rv32i_mini_soc..
+Finding unused cells or wires in module \timer..
+Finding unused cells or wires in module $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000..
+Finding unused cells or wires in module $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx..
+Finding unused cells or wires in module \simple_interconnect..
+Finding unused cells or wires in module $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000..
+Finding unused cells or wires in module \rv32i_core_pipeline..
+Finding unused cells or wires in module \hazard_unit..
+Finding unused cells or wires in module \forwarding_unit..
+Finding unused cells or wires in module \control_unit..
+Finding unused cells or wires in module \imm_gen..
+Finding unused cells or wires in module \regfile..
+Finding unused cells or wires in module \alu..
+Removed 28 unused cells and 874 unused wires.
+<suppressed ~40 debug messages>
+
+18.5. Executing CHECK pass (checking for obvious problems).
+Checking module rv32i_mini_soc...
+Checking module timer...
+Checking module $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000...
+Checking module $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx...
+Checking module simple_interconnect...
+Checking module $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000...
+Checking module rv32i_core_pipeline...
+Checking module hazard_unit...
+Checking module forwarding_unit...
+Checking module control_unit...
+Checking module imm_gen...
+Checking module regfile...
+Checking module alu...
+Found and reported 0 problems.
+
+18.6. Executing OPT pass (performing simple optimizations).
+
+18.6.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module rv32i_mini_soc.
+Optimizing module timer.
+Optimizing module $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.
+Optimizing module $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx.
+Optimizing module simple_interconnect.
+Optimizing module $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000.
+Optimizing module rv32i_core_pipeline.
+Optimizing module hazard_unit.
+Optimizing module forwarding_unit.
+Optimizing module control_unit.
+Optimizing module imm_gen.
+Optimizing module regfile.
+Optimizing module alu.
+
+18.6.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\rv32i_mini_soc'.
+Computing hashes of 6 cells of `\rv32i_mini_soc'.
+Finding duplicate cells in `\rv32i_mini_soc'.
+Finding identical cells in module `\timer'.
+Computing hashes of 57 cells of `\timer'.
+Finding duplicate cells in `\timer'.
+Computing hashes of 50 cells of `\timer'.
+Finding duplicate cells in `\timer'.
+<suppressed ~21 debug messages>
+Finding identical cells in module `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000'.
+Computing hashes of 17 cells of `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000'.
+Finding duplicate cells in `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000'.
+Finding identical cells in module `$paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx'.
+Computing hashes of 36 cells of `$paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx'.
+Finding duplicate cells in `$paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx'.
+Finding identical cells in module `\simple_interconnect'.
+Computing hashes of 35 cells of `\simple_interconnect'.
+Finding duplicate cells in `\simple_interconnect'.
+Finding identical cells in module `$paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000'.
+Computing hashes of 330 cells of `$paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000'.
+Finding duplicate cells in `$paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000'.
+Computing hashes of 266 cells of `$paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000'.
+Finding duplicate cells in `$paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000'.
+<suppressed ~192 debug messages>
+Finding identical cells in module `\rv32i_core_pipeline'.
+Computing hashes of 231 cells of `\rv32i_core_pipeline'.
+Finding duplicate cells in `\rv32i_core_pipeline'.
+Computing hashes of 213 cells of `\rv32i_core_pipeline'.
+Finding duplicate cells in `\rv32i_core_pipeline'.
+Computing hashes of 212 cells of `\rv32i_core_pipeline'.
+Finding duplicate cells in `\rv32i_core_pipeline'.
+<suppressed ~57 debug messages>
+Finding identical cells in module `\hazard_unit'.
+Computing hashes of 9 cells of `\hazard_unit'.
+Finding duplicate cells in `\hazard_unit'.
+Finding identical cells in module `\forwarding_unit'.
+Computing hashes of 26 cells of `\forwarding_unit'.
+Finding duplicate cells in `\forwarding_unit'.
+Computing hashes of 24 cells of `\forwarding_unit'.
+Finding duplicate cells in `\forwarding_unit'.
+Computing hashes of 22 cells of `\forwarding_unit'.
+Finding duplicate cells in `\forwarding_unit'.
+<suppressed ~12 debug messages>
+Finding identical cells in module `\control_unit'.
+Computing hashes of 297 cells of `\control_unit'.
+Finding duplicate cells in `\control_unit'.
+Computing hashes of 142 cells of `\control_unit'.
+Finding duplicate cells in `\control_unit'.
+<suppressed ~465 debug messages>
+Finding identical cells in module `\imm_gen'.
+Computing hashes of 6 cells of `\imm_gen'.
+Finding duplicate cells in `\imm_gen'.
+Finding identical cells in module `\regfile'.
+Computing hashes of 12 cells of `\regfile'.
+Finding duplicate cells in `\regfile'.
+Finding identical cells in module `\alu'.
+Computing hashes of 21 cells of `\alu'.
+Finding duplicate cells in `\alu'.
+Removed a total of 249 cells.
+
+18.6.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \rv32i_mini_soc..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \timer..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$502.
+Running muxtree optimizer on module $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+      Replacing known input bits on port A of cell $procmux$550: \busy -> 1'1
+      Replacing known input bits on port A of cell $procmux$548: \busy -> 1'1
+      Replacing known input bits on port A of cell $procmux$543: \busy -> 1'0
+  Analyzing evaluation results.
+Running muxtree optimizer on module \simple_interconnect..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$636.
+    dead port 2/2 on $mux $procmux$630.
+    dead port 1/2 on $mux $procmux$628.
+    dead port 2/2 on $mux $procmux$621.
+    dead port 1/2 on $mux $procmux$619.
+    dead port 1/2 on $mux $procmux$616.
+    dead port 2/2 on $mux $procmux$609.
+    dead port 1/2 on $mux $procmux$607.
+    dead port 1/2 on $mux $procmux$604.
+    dead port 1/2 on $mux $procmux$601.
+Running muxtree optimizer on module $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$1296.
+Running muxtree optimizer on module \rv32i_core_pipeline..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$1626.
+    dead port 2/2 on $mux $procmux$1619.
+    dead port 2/2 on $mux $procmux$1612.
+    dead port 1/3 on $pmux $procmux$1609.
+    dead port 2/3 on $pmux $procmux$1609.
+    dead port 2/2 on $mux $procmux$1602.
+    dead port 1/3 on $pmux $procmux$1599.
+    dead port 2/3 on $pmux $procmux$1599.
+    dead port 2/2 on $mux $procmux$1581.
+    dead port 2/2 on $mux $procmux$1573.
+    dead port 1/2 on $mux $ternary$rtl/cpu/rv32i_core_pipeline.sv:143$62.
+Running muxtree optimizer on module \hazard_unit..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \forwarding_unit..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$1675.
+    dead port 1/2 on $mux $procmux$1669.
+    dead port 1/2 on $mux $procmux$1684.
+    dead port 2/2 on $mux $procmux$1690.
+Running muxtree optimizer on module \control_unit..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$2118.
+    dead port 2/2 on $mux $procmux$1968.
+    dead port 2/2 on $mux $procmux$1959.
+    dead port 2/2 on $mux $procmux$1951.
+    dead port 2/2 on $mux $procmux$2107.
+    dead port 2/2 on $mux $procmux$1942.
+    dead port 2/2 on $mux $procmux$1923.
+    dead port 2/2 on $mux $procmux$1913.
+    dead port 2/2 on $mux $procmux$1905.
+    dead port 2/2 on $mux $procmux$1897.
+    dead port 2/2 on $mux $procmux$1889.
+    dead port 2/2 on $mux $procmux$2081.
+    dead port 2/2 on $mux $procmux$1881.
+    dead port 2/2 on $mux $procmux$2066.
+    dead port 2/2 on $mux $procmux$1860.
+    dead port 2/2 on $mux $procmux$2051.
+    dead port 2/2 on $mux $procmux$1847.
+    dead port 2/2 on $mux $procmux$1845.
+    dead port 2/2 on $mux $procmux$1832.
+    dead port 2/2 on $mux $procmux$2041.
+    dead port 2/2 on $mux $procmux$1830.
+    dead port 2/2 on $mux $procmux$2182.
+    dead port 2/2 on $mux $procmux$1817.
+    dead port 2/2 on $mux $procmux$1815.
+    dead port 2/2 on $mux $procmux$2031.
+    dead port 2/2 on $mux $procmux$1806.
+    dead port 2/2 on $mux $procmux$1804.
+    dead port 2/2 on $mux $procmux$1795.
+    dead port 2/2 on $mux $procmux$2021.
+    dead port 2/2 on $mux $procmux$1793.
+    dead port 1/2 on $mux $procmux$1791.
+    dead port 2/2 on $mux $procmux$1781.
+    dead port 2/2 on $mux $procmux$2171.
+    dead port 2/2 on $mux $procmux$1779.
+    dead port 1/2 on $mux $procmux$1777.
+    dead port 2/2 on $mux $procmux$1767.
+    dead port 2/2 on $mux $procmux$1760.
+    dead port 2/2 on $mux $procmux$1753.
+    dead port 2/2 on $mux $procmux$1746.
+    dead port 2/2 on $mux $procmux$2160.
+    dead port 2/2 on $mux $procmux$1725.
+    dead port 2/2 on $mux $procmux$2149.
+    dead port 2/2 on $mux $procmux$1998.
+    dead port 2/2 on $mux $procmux$2139.
+    dead port 2/2 on $mux $procmux$1711.
+    dead port 2/2 on $mux $procmux$2128.
+    dead port 2/2 on $mux $procmux$1705.
+    dead port 2/2 on $mux $procmux$1986.
+    dead port 2/2 on $mux $procmux$1699.
+    dead port 2/2 on $mux $procmux$1977.
+Running muxtree optimizer on module \imm_gen..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \regfile..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \alu..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 77 multiplexer ports.
+<suppressed ~791 debug messages>
+
+18.6.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \rv32i_mini_soc.
+  Optimizing cells in module \timer.
+  Optimizing cells in module $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.
+    Consolidated identical input bits for $mux cell $procmux$535:
+      Old ports: A=0, B=255, Y=$0$memwr$\memory$rtl/memory/data_ram.sv:24$348_EN[31:0]$357
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\memory$rtl/memory/data_ram.sv:24$348_EN[31:0]$357 [0]
+      New connections: $0$memwr$\memory$rtl/memory/data_ram.sv:24$348_EN[31:0]$357 [31:1] = { 24'000000000000000000000000 $0$memwr$\memory$rtl/memory/data_ram.sv:24$348_EN[31:0]$357 [0] $0$memwr$\memory$rtl/memory/data_ram.sv:24$348_EN[31:0]$357 [0] $0$memwr$\memory$rtl/memory/data_ram.sv:24$348_EN[31:0]$357 [0] $0$memwr$\memory$rtl/memory/data_ram.sv:24$348_EN[31:0]$357 [0] $0$memwr$\memory$rtl/memory/data_ram.sv:24$348_EN[31:0]$357 [0] $0$memwr$\memory$rtl/memory/data_ram.sv:24$348_EN[31:0]$357 [0] $0$memwr$\memory$rtl/memory/data_ram.sv:24$348_EN[31:0]$357 [0] }
+    Consolidated identical input bits for $mux cell $procmux$526:
+      Old ports: A=0, B=65280, Y=$0$memwr$\memory$rtl/memory/data_ram.sv:24$349_EN[31:0]$360
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\memory$rtl/memory/data_ram.sv:24$349_EN[31:0]$360 [8]
+      New connections: { $0$memwr$\memory$rtl/memory/data_ram.sv:24$349_EN[31:0]$360 [31:9] $0$memwr$\memory$rtl/memory/data_ram.sv:24$349_EN[31:0]$360 [7:0] } = { 16'0000000000000000 $0$memwr$\memory$rtl/memory/data_ram.sv:24$349_EN[31:0]$360 [8] $0$memwr$\memory$rtl/memory/data_ram.sv:24$349_EN[31:0]$360 [8] $0$memwr$\memory$rtl/memory/data_ram.sv:24$349_EN[31:0]$360 [8] $0$memwr$\memory$rtl/memory/data_ram.sv:24$349_EN[31:0]$360 [8] $0$memwr$\memory$rtl/memory/data_ram.sv:24$349_EN[31:0]$360 [8] $0$memwr$\memory$rtl/memory/data_ram.sv:24$349_EN[31:0]$360 [8] $0$memwr$\memory$rtl/memory/data_ram.sv:24$349_EN[31:0]$360 [8] 8'00000000 }
+    Consolidated identical input bits for $mux cell $procmux$517:
+      Old ports: A=0, B=16711680, Y=$0$memwr$\memory$rtl/memory/data_ram.sv:24$350_EN[31:0]$363
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\memory$rtl/memory/data_ram.sv:24$350_EN[31:0]$363 [16]
+      New connections: { $0$memwr$\memory$rtl/memory/data_ram.sv:24$350_EN[31:0]$363 [31:17] $0$memwr$\memory$rtl/memory/data_ram.sv:24$350_EN[31:0]$363 [15:0] } = { 8'00000000 $0$memwr$\memory$rtl/memory/data_ram.sv:24$350_EN[31:0]$363 [16] $0$memwr$\memory$rtl/memory/data_ram.sv:24$350_EN[31:0]$363 [16] $0$memwr$\memory$rtl/memory/data_ram.sv:24$350_EN[31:0]$363 [16] $0$memwr$\memory$rtl/memory/data_ram.sv:24$350_EN[31:0]$363 [16] $0$memwr$\memory$rtl/memory/data_ram.sv:24$350_EN[31:0]$363 [16] $0$memwr$\memory$rtl/memory/data_ram.sv:24$350_EN[31:0]$363 [16] $0$memwr$\memory$rtl/memory/data_ram.sv:24$350_EN[31:0]$363 [16] 16'0000000000000000 }
+    Consolidated identical input bits for $mux cell $procmux$508:
+      Old ports: A=0, B=32'11111111000000000000000000000000, Y=$0$memwr$\memory$rtl/memory/data_ram.sv:24$351_EN[31:0]$366
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\memory$rtl/memory/data_ram.sv:24$351_EN[31:0]$366 [24]
+      New connections: { $0$memwr$\memory$rtl/memory/data_ram.sv:24$351_EN[31:0]$366 [31:25] $0$memwr$\memory$rtl/memory/data_ram.sv:24$351_EN[31:0]$366 [23:0] } = { $0$memwr$\memory$rtl/memory/data_ram.sv:24$351_EN[31:0]$366 [24] $0$memwr$\memory$rtl/memory/data_ram.sv:24$351_EN[31:0]$366 [24] $0$memwr$\memory$rtl/memory/data_ram.sv:24$351_EN[31:0]$366 [24] $0$memwr$\memory$rtl/memory/data_ram.sv:24$351_EN[31:0]$366 [24] $0$memwr$\memory$rtl/memory/data_ram.sv:24$351_EN[31:0]$366 [24] $0$memwr$\memory$rtl/memory/data_ram.sv:24$351_EN[31:0]$366 [24] $0$memwr$\memory$rtl/memory/data_ram.sv:24$351_EN[31:0]$366 [24] 24'000000000000000000000000 }
+  Optimizing cells in module $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.
+  Optimizing cells in module $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx.
+  Optimizing cells in module \simple_interconnect.
+  Optimizing cells in module $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000.
+  Optimizing cells in module \rv32i_core_pipeline.
+    New ctrl vector for $pmux cell $procmux$1635: { $auto$opt_reduce.cc:137:opt_pmux$2407 $auto$opt_reduce.cc:137:opt_pmux$2405 $procmux$1640_CMP $procmux$1641_CMP }
+    New ctrl vector for $pmux cell $procmux$1623: $auto$opt_reduce.cc:137:opt_pmux$2409
+    New ctrl vector for $pmux cell $procmux$1577: { $procmux$1591_CMP $auto$opt_reduce.cc:137:opt_pmux$2411 }
+  Optimizing cells in module \rv32i_core_pipeline.
+  Optimizing cells in module \hazard_unit.
+  Optimizing cells in module \forwarding_unit.
+  Optimizing cells in module \control_unit.
+    New ctrl vector for $pmux cell $procmux$2186: { $procmux$2297_CMP $procmux$2299_CMP $procmux$2259_CMP $auto$opt_reduce.cc:137:opt_pmux$2413 }
+    New ctrl vector for $pmux cell $procmux$1929: $auto$opt_reduce.cc:137:opt_pmux$2415
+    New ctrl vector for $pmux cell $procmux$2217: { $procmux$2295_CMP $procmux$2296_CMP $procmux$2298_CMP $procmux$2300_CMP $auto$opt_reduce.cc:137:opt_pmux$2417 }
+    New ctrl vector for $pmux cell $procmux$2089: $auto$opt_reduce.cc:137:opt_pmux$2419
+    New ctrl vector for $pmux cell $procmux$2018: $auto$opt_reduce.cc:137:opt_pmux$2421
+    New ctrl vector for $pmux cell $procmux$1729: $auto$opt_reduce.cc:137:opt_pmux$2423
+    New ctrl vector for $pmux cell $procmux$2005: $auto$opt_reduce.cc:137:opt_pmux$2425
+    New ctrl vector for $pmux cell $procmux$2197: { $procmux$2296_CMP $procmux$2297_CMP $procmux$2298_CMP $procmux$2300_CMP $auto$opt_reduce.cc:137:opt_pmux$2427 }
+    New ctrl vector for $pmux cell $procmux$1993: { $auto$opt_reduce.cc:137:opt_pmux$2431 $auto$opt_reduce.cc:137:opt_pmux$2429 }
+    New ctrl vector for $pmux cell $procmux$2074: { $auto$opt_reduce.cc:137:opt_pmux$2437 $auto$opt_reduce.cc:137:opt_pmux$2435 $auto$opt_reduce.cc:137:opt_pmux$2433 }
+    New ctrl vector for $pmux cell $procmux$2226: { $procmux$2295_CMP $procmux$2296_CMP $procmux$2297_CMP $procmux$2298_CMP $procmux$2299_CMP $procmux$2300_CMP $auto$opt_reduce.cc:137:opt_pmux$2439 }
+    New ctrl vector for $pmux cell $procmux$1864: { $auto$opt_reduce.cc:137:opt_pmux$2441 $procmux$2092_CMP $procmux$2094_CMP }
+    New ctrl vector for $pmux cell $procmux$2211: { $auto$opt_reduce.cc:137:opt_pmux$2443 $procmux$2235_CMP }
+  Optimizing cells in module \control_unit.
+  Optimizing cells in module \imm_gen.
+  Optimizing cells in module \regfile.
+    Consolidated identical input bits for $mux cell $procmux$2309:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$0$memwr$\registers$rtl/cpu/regfile.sv:22$12_EN[31:0]$22
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\registers$rtl/cpu/regfile.sv:22$12_EN[31:0]$22 [0]
+      New connections: $0$memwr$\registers$rtl/cpu/regfile.sv:22$12_EN[31:0]$22 [31:1] = { $0$memwr$\registers$rtl/cpu/regfile.sv:22$12_EN[31:0]$22 [0] $0$memwr$\registers$rtl/cpu/regfile.sv:22$12_EN[31:0]$22 [0] $0$memwr$\registers$rtl/cpu/regfile.sv:22$12_EN[31:0]$22 [0] $0$memwr$\registers$rtl/cpu/regfile.sv:22$12_EN[31:0]$22 [0] $0$memwr$\registers$rtl/cpu/regfile.sv:22$12_EN[31:0]$22 [0] $0$memwr$\registers$rtl/cpu/regfile.sv:22$12_EN[31:0]$22 [0] $0$memwr$\registers$rtl/cpu/regfile.sv:22$12_EN[31:0]$22 [0] $0$memwr$\registers$rtl/cpu/regfile.sv:22$12_EN[31:0]$22 [0] $0$memwr$\registers$rtl/cpu/regfile.sv:22$12_EN[31:0]$22 [0] $0$memwr$\registers$rtl/cpu/regfile.sv:22$12_EN[31:0]$22 [0] $0$memwr$\registers$rtl/cpu/regfile.sv:22$12_EN[31:0]$22 [0] $0$memwr$\registers$rtl/cpu/regfile.sv:22$12_EN[31:0]$22 [0] $0$memwr$\registers$rtl/cpu/regfile.sv:22$12_EN[31:0]$22 [0] $0$memwr$\registers$rtl/cpu/regfile.sv:22$12_EN[31:0]$22 [0] $0$memwr$\registers$rtl/cpu/regfile.sv:22$12_EN[31:0]$22 [0] $0$memwr$\registers$rtl/cpu/regfile.sv:22$12_EN[31:0]$22 [0] $0$memwr$\registers$rtl/cpu/regfile.sv:22$12_EN[31:0]$22 [0] $0$memwr$\registers$rtl/cpu/regfile.sv:22$12_EN[31:0]$22 [0] $0$memwr$\registers$rtl/cpu/regfile.sv:22$12_EN[31:0]$22 [0] $0$memwr$\registers$rtl/cpu/regfile.sv:22$12_EN[31:0]$22 [0] $0$memwr$\registers$rtl/cpu/regfile.sv:22$12_EN[31:0]$22 [0] $0$memwr$\registers$rtl/cpu/regfile.sv:22$12_EN[31:0]$22 [0] $0$memwr$\registers$rtl/cpu/regfile.sv:22$12_EN[31:0]$22 [0] $0$memwr$\registers$rtl/cpu/regfile.sv:22$12_EN[31:0]$22 [0] $0$memwr$\registers$rtl/cpu/regfile.sv:22$12_EN[31:0]$22 [0] $0$memwr$\registers$rtl/cpu/regfile.sv:22$12_EN[31:0]$22 [0] $0$memwr$\registers$rtl/cpu/regfile.sv:22$12_EN[31:0]$22 [0] $0$memwr$\registers$rtl/cpu/regfile.sv:22$12_EN[31:0]$22 [0] $0$memwr$\registers$rtl/cpu/regfile.sv:22$12_EN[31:0]$22 [0] $0$memwr$\registers$rtl/cpu/regfile.sv:22$12_EN[31:0]$22 [0] $0$memwr$\registers$rtl/cpu/regfile.sv:22$12_EN[31:0]$22 [0] }
+  Optimizing cells in module \regfile.
+  Optimizing cells in module \alu.
+Performed a total of 21 changes.
+
+18.6.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\rv32i_mini_soc'.
+Computing hashes of 6 cells of `\rv32i_mini_soc'.
+Finding duplicate cells in `\rv32i_mini_soc'.
+Finding identical cells in module `\timer'.
+Computing hashes of 49 cells of `\timer'.
+Finding duplicate cells in `\timer'.
+Finding identical cells in module `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000'.
+Computing hashes of 17 cells of `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000'.
+Finding duplicate cells in `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000'.
+Finding identical cells in module `$paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx'.
+Computing hashes of 36 cells of `$paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx'.
+Finding duplicate cells in `$paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx'.
+Finding identical cells in module `\simple_interconnect'.
+Computing hashes of 25 cells of `\simple_interconnect'.
+Finding duplicate cells in `\simple_interconnect'.
+Finding identical cells in module `$paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000'.
+Computing hashes of 265 cells of `$paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000'.
+Finding duplicate cells in `$paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000'.
+Finding identical cells in module `\rv32i_core_pipeline'.
+Computing hashes of 207 cells of `\rv32i_core_pipeline'.
+Finding duplicate cells in `\rv32i_core_pipeline'.
+Finding identical cells in module `\hazard_unit'.
+Computing hashes of 9 cells of `\hazard_unit'.
+Finding duplicate cells in `\hazard_unit'.
+Finding identical cells in module `\forwarding_unit'.
+Computing hashes of 18 cells of `\forwarding_unit'.
+Finding duplicate cells in `\forwarding_unit'.
+Finding identical cells in module `\control_unit'.
+Computing hashes of 108 cells of `\control_unit'.
+Finding duplicate cells in `\control_unit'.
+Computing hashes of 93 cells of `\control_unit'.
+Finding duplicate cells in `\control_unit'.
+<suppressed ~45 debug messages>
+Finding identical cells in module `\imm_gen'.
+Computing hashes of 6 cells of `\imm_gen'.
+Finding duplicate cells in `\imm_gen'.
+Finding identical cells in module `\regfile'.
+Computing hashes of 12 cells of `\regfile'.
+Finding duplicate cells in `\regfile'.
+Finding identical cells in module `\alu'.
+Computing hashes of 21 cells of `\alu'.
+Finding duplicate cells in `\alu'.
+Removed a total of 15 cells.
+
+18.6.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+18.6.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \rv32i_mini_soc..
+Finding unused cells or wires in module \timer..
+Finding unused cells or wires in module $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000..
+Finding unused cells or wires in module $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx..
+Finding unused cells or wires in module \simple_interconnect..
+Finding unused cells or wires in module $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000..
+Finding unused cells or wires in module \rv32i_core_pipeline..
+Finding unused cells or wires in module \hazard_unit..
+Finding unused cells or wires in module \forwarding_unit..
+Finding unused cells or wires in module \control_unit..
+Finding unused cells or wires in module \imm_gen..
+Finding unused cells or wires in module \regfile..
+Finding unused cells or wires in module \alu..
+Removed 0 unused cells and 339 unused wires.
+<suppressed ~6 debug messages>
+
+18.6.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module rv32i_mini_soc.
+Optimizing module timer.
+Optimizing module $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.
+Optimizing module $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx.
+Optimizing module simple_interconnect.
+Optimizing module $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000.
+Optimizing module rv32i_core_pipeline.
+Optimizing module hazard_unit.
+Optimizing module forwarding_unit.
+Optimizing module control_unit.
+Optimizing module imm_gen.
+Optimizing module regfile.
+Optimizing module alu.
+
+18.6.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+18.6.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \rv32i_mini_soc..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \timer..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \simple_interconnect..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \rv32i_core_pipeline..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \hazard_unit..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \forwarding_unit..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \control_unit..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \imm_gen..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \regfile..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \alu..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~725 debug messages>
+
+18.6.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \rv32i_mini_soc.
+  Optimizing cells in module \timer.
+  Optimizing cells in module $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.
+  Optimizing cells in module $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx.
+  Optimizing cells in module \simple_interconnect.
+  Optimizing cells in module $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000.
+  Optimizing cells in module \rv32i_core_pipeline.
+  Optimizing cells in module \hazard_unit.
+  Optimizing cells in module \forwarding_unit.
+  Optimizing cells in module \control_unit.
+  Optimizing cells in module \imm_gen.
+  Optimizing cells in module \regfile.
+  Optimizing cells in module \alu.
+Performed a total of 0 changes.
+
+18.6.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\rv32i_mini_soc'.
+Computing hashes of 6 cells of `\rv32i_mini_soc'.
+Finding duplicate cells in `\rv32i_mini_soc'.
+Finding identical cells in module `\timer'.
+Computing hashes of 49 cells of `\timer'.
+Finding duplicate cells in `\timer'.
+Finding identical cells in module `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000'.
+Computing hashes of 17 cells of `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000'.
+Finding duplicate cells in `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000'.
+Finding identical cells in module `$paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx'.
+Computing hashes of 36 cells of `$paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx'.
+Finding duplicate cells in `$paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx'.
+Finding identical cells in module `\simple_interconnect'.
+Computing hashes of 25 cells of `\simple_interconnect'.
+Finding duplicate cells in `\simple_interconnect'.
+Finding identical cells in module `$paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000'.
+Computing hashes of 265 cells of `$paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000'.
+Finding duplicate cells in `$paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000'.
+Finding identical cells in module `\rv32i_core_pipeline'.
+Computing hashes of 207 cells of `\rv32i_core_pipeline'.
+Finding duplicate cells in `\rv32i_core_pipeline'.
+Finding identical cells in module `\hazard_unit'.
+Computing hashes of 9 cells of `\hazard_unit'.
+Finding duplicate cells in `\hazard_unit'.
+Finding identical cells in module `\forwarding_unit'.
+Computing hashes of 18 cells of `\forwarding_unit'.
+Finding duplicate cells in `\forwarding_unit'.
+Finding identical cells in module `\control_unit'.
+Computing hashes of 93 cells of `\control_unit'.
+Finding duplicate cells in `\control_unit'.
+Finding identical cells in module `\imm_gen'.
+Computing hashes of 6 cells of `\imm_gen'.
+Finding duplicate cells in `\imm_gen'.
+Finding identical cells in module `\regfile'.
+Computing hashes of 12 cells of `\regfile'.
+Finding duplicate cells in `\regfile'.
+Finding identical cells in module `\alu'.
+Computing hashes of 21 cells of `\alu'.
+Finding duplicate cells in `\alu'.
+Removed a total of 0 cells.
+
+18.6.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+18.6.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \rv32i_mini_soc..
+Finding unused cells or wires in module \timer..
+Finding unused cells or wires in module $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000..
+Finding unused cells or wires in module $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx..
+Finding unused cells or wires in module \simple_interconnect..
+Finding unused cells or wires in module $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000..
+Finding unused cells or wires in module \rv32i_core_pipeline..
+Finding unused cells or wires in module \hazard_unit..
+Finding unused cells or wires in module \forwarding_unit..
+Finding unused cells or wires in module \control_unit..
+Finding unused cells or wires in module \imm_gen..
+Finding unused cells or wires in module \regfile..
+Finding unused cells or wires in module \alu..
+
+18.6.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module rv32i_mini_soc.
+Optimizing module timer.
+Optimizing module $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.
+Optimizing module $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx.
+Optimizing module simple_interconnect.
+Optimizing module $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000.
+Optimizing module rv32i_core_pipeline.
+Optimizing module hazard_unit.
+Optimizing module forwarding_unit.
+Optimizing module control_unit.
+Optimizing module imm_gen.
+Optimizing module regfile.
+Optimizing module alu.
+
+18.6.16. Finished fast OPT passes. (There is nothing left to do.)
+
+18.7. Executing FSM pass (extract and optimize FSM).
+
+18.7.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+18.7.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+18.7.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+18.7.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \rv32i_mini_soc..
+Finding unused cells or wires in module \timer..
+Finding unused cells or wires in module $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000..
+Finding unused cells or wires in module $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx..
+Finding unused cells or wires in module \simple_interconnect..
+Finding unused cells or wires in module $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000..
+Finding unused cells or wires in module \rv32i_core_pipeline..
+Finding unused cells or wires in module \hazard_unit..
+Finding unused cells or wires in module \forwarding_unit..
+Finding unused cells or wires in module \control_unit..
+Finding unused cells or wires in module \imm_gen..
+Finding unused cells or wires in module \regfile..
+Finding unused cells or wires in module \alu..
+
+18.7.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+18.7.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+18.7.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+18.7.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+18.8. Executing OPT pass (performing simple optimizations).
+
+18.8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module rv32i_mini_soc.
+Optimizing module timer.
+Optimizing module $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.
+Optimizing module $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx.
+Optimizing module simple_interconnect.
+Optimizing module $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000.
+Optimizing module rv32i_core_pipeline.
+Optimizing module hazard_unit.
+Optimizing module forwarding_unit.
+Optimizing module control_unit.
+Optimizing module imm_gen.
+Optimizing module regfile.
+Optimizing module alu.
+
+18.8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\rv32i_mini_soc'.
+Computing hashes of 6 cells of `\rv32i_mini_soc'.
+Finding duplicate cells in `\rv32i_mini_soc'.
+Finding identical cells in module `\timer'.
+Computing hashes of 49 cells of `\timer'.
+Finding duplicate cells in `\timer'.
+Finding identical cells in module `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000'.
+Computing hashes of 17 cells of `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000'.
+Finding duplicate cells in `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000'.
+Finding identical cells in module `$paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx'.
+Computing hashes of 36 cells of `$paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx'.
+Finding duplicate cells in `$paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx'.
+Finding identical cells in module `\simple_interconnect'.
+Computing hashes of 25 cells of `\simple_interconnect'.
+Finding duplicate cells in `\simple_interconnect'.
+Finding identical cells in module `$paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000'.
+Computing hashes of 265 cells of `$paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000'.
+Finding duplicate cells in `$paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000'.
+Finding identical cells in module `\rv32i_core_pipeline'.
+Computing hashes of 207 cells of `\rv32i_core_pipeline'.
+Finding duplicate cells in `\rv32i_core_pipeline'.
+Finding identical cells in module `\hazard_unit'.
+Computing hashes of 9 cells of `\hazard_unit'.
+Finding duplicate cells in `\hazard_unit'.
+Finding identical cells in module `\forwarding_unit'.
+Computing hashes of 18 cells of `\forwarding_unit'.
+Finding duplicate cells in `\forwarding_unit'.
+Finding identical cells in module `\control_unit'.
+Computing hashes of 93 cells of `\control_unit'.
+Finding duplicate cells in `\control_unit'.
+Finding identical cells in module `\imm_gen'.
+Computing hashes of 6 cells of `\imm_gen'.
+Finding duplicate cells in `\imm_gen'.
+Finding identical cells in module `\regfile'.
+Computing hashes of 12 cells of `\regfile'.
+Finding duplicate cells in `\regfile'.
+Finding identical cells in module `\alu'.
+Computing hashes of 21 cells of `\alu'.
+Finding duplicate cells in `\alu'.
+Removed a total of 0 cells.
+
+18.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \rv32i_mini_soc..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \timer..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \simple_interconnect..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \rv32i_core_pipeline..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \hazard_unit..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \forwarding_unit..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \control_unit..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \imm_gen..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \regfile..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \alu..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~725 debug messages>
+
+18.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \rv32i_mini_soc.
+  Optimizing cells in module \timer.
+  Optimizing cells in module $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.
+  Optimizing cells in module $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx.
+  Optimizing cells in module \simple_interconnect.
+  Optimizing cells in module $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000.
+  Optimizing cells in module \rv32i_core_pipeline.
+  Optimizing cells in module \hazard_unit.
+  Optimizing cells in module \forwarding_unit.
+  Optimizing cells in module \control_unit.
+  Optimizing cells in module \imm_gen.
+  Optimizing cells in module \regfile.
+  Optimizing cells in module \alu.
+Performed a total of 0 changes.
+
+18.8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\rv32i_mini_soc'.
+Computing hashes of 6 cells of `\rv32i_mini_soc'.
+Finding duplicate cells in `\rv32i_mini_soc'.
+Finding identical cells in module `\timer'.
+Computing hashes of 49 cells of `\timer'.
+Finding duplicate cells in `\timer'.
+Finding identical cells in module `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000'.
+Computing hashes of 17 cells of `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000'.
+Finding duplicate cells in `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000'.
+Finding identical cells in module `$paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx'.
+Computing hashes of 36 cells of `$paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx'.
+Finding duplicate cells in `$paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx'.
+Finding identical cells in module `\simple_interconnect'.
+Computing hashes of 25 cells of `\simple_interconnect'.
+Finding duplicate cells in `\simple_interconnect'.
+Finding identical cells in module `$paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000'.
+Computing hashes of 265 cells of `$paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000'.
+Finding duplicate cells in `$paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000'.
+Finding identical cells in module `\rv32i_core_pipeline'.
+Computing hashes of 207 cells of `\rv32i_core_pipeline'.
+Finding duplicate cells in `\rv32i_core_pipeline'.
+Finding identical cells in module `\hazard_unit'.
+Computing hashes of 9 cells of `\hazard_unit'.
+Finding duplicate cells in `\hazard_unit'.
+Finding identical cells in module `\forwarding_unit'.
+Computing hashes of 18 cells of `\forwarding_unit'.
+Finding duplicate cells in `\forwarding_unit'.
+Finding identical cells in module `\control_unit'.
+Computing hashes of 93 cells of `\control_unit'.
+Finding duplicate cells in `\control_unit'.
+Finding identical cells in module `\imm_gen'.
+Computing hashes of 6 cells of `\imm_gen'.
+Finding duplicate cells in `\imm_gen'.
+Finding identical cells in module `\regfile'.
+Computing hashes of 12 cells of `\regfile'.
+Finding duplicate cells in `\regfile'.
+Finding identical cells in module `\alu'.
+Computing hashes of 21 cells of `\alu'.
+Finding duplicate cells in `\alu'.
+Removed a total of 0 cells.
+
+18.8.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $procdff$2333 ($dff) from module timer (D = $procmux$450_Y, Q = \pending, rval = 1'0).
+Adding SRST signal on $procdff$2332 ($dff) from module timer (D = $procmux$462_Y, Q = \irq_enable, rval = 1'0).
+Adding EN signal on $auto$ff.cc:337:slice$2445 ($sdff) from module timer (D = \write_data_i [1], Q = \irq_enable).
+Adding SRST signal on $procdff$2331 ($dff) from module timer (D = $procmux$474_Y, Q = \enable, rval = 1'0).
+Adding EN signal on $auto$ff.cc:337:slice$2449 ($sdff) from module timer (D = \write_data_i [0], Q = \enable).
+Adding SRST signal on $procdff$2330 ($dff) from module timer (D = { $procmux$387_Y $procmux$400_Y $procmux$413_Y $procmux$426_Y }, Q = \compare_value, rval = 0).
+Adding EN signal on $auto$ff.cc:337:slice$2453 ($sdff) from module timer (D = \write_data_i [7:0], Q = \compare_value [7:0]).
+Adding EN signal on $auto$ff.cc:337:slice$2453 ($sdff) from module timer (D = \write_data_i [15:8], Q = \compare_value [15:8]).
+Adding EN signal on $auto$ff.cc:337:slice$2453 ($sdff) from module timer (D = \write_data_i [23:16], Q = \compare_value [23:16]).
+Adding EN signal on $auto$ff.cc:337:slice$2453 ($sdff) from module timer (D = \write_data_i [31:24], Q = \compare_value [31:24]).
+Adding SRST signal on $procdff$2329 ($dff) from module timer (D = $procmux$490_Y, Q = \count, rval = 0).
+Adding EN signal on $auto$ff.cc:337:slice$2466 ($sdff) from module timer (D = $add$rtl/peripherals/timer.sv:68$261_Y, Q = \count).
+Adding SRST signal on $procdff$2348 ($dff) from module $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx (D = $procmux$591_Y, Q = \baud_count, rval = 9'000000000).
+Adding EN signal on $auto$ff.cc:337:slice$2468 ($sdff) from module $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx (D = $procmux$591_Y, Q = \baud_count).
+Adding SRST signal on $procdff$2349 ($dff) from module $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx (D = $procmux$580_Y, Q = \frame, rval = 10'1111111111).
+Adding EN signal on $auto$ff.cc:337:slice$2472 ($sdff) from module $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx (D = $procmux$580_Y, Q = \frame).
+Adding SRST signal on $procdff$2350 ($dff) from module $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx (D = $procmux$566_Y, Q = \bit_index, rval = 4'0000).
+Adding EN signal on $auto$ff.cc:337:slice$2482 ($sdff) from module $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx (D = $procmux$566_Y, Q = \bit_index).
+Adding SRST signal on $procdff$2351 ($dff) from module $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx (D = $procmux$552_Y, Q = \busy, rval = 1'0).
+Adding SRST signal on $procdff$2353 ($dff) from module $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000 (D = { $procmux$646_Y $procmux$656_Y $procmux$676_Y $procmux$696_Y $procmux$716_Y $procmux$736_Y $procmux$756_Y $procmux$776_Y $procmux$796_Y $procmux$816_Y $procmux$836_Y $procmux$856_Y $procmux$876_Y $procmux$896_Y $procmux$916_Y $procmux$936_Y $procmux$956_Y $procmux$976_Y $procmux$996_Y $procmux$1016_Y $procmux$1036_Y $procmux$1056_Y $procmux$1076_Y $procmux$1096_Y $procmux$1116_Y $procmux$1136_Y $procmux$1156_Y $procmux$1176_Y $procmux$1196_Y $procmux$1216_Y $procmux$1236_Y $procmux$1256_Y }, Q = \gpio_dir_o, rval = 0).
+Adding EN signal on $auto$ff.cc:337:slice$2493 ($sdff) from module $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000 (D = \write_data_i [7:0], Q = \gpio_dir_o [7:0]).
+Adding EN signal on $auto$ff.cc:337:slice$2493 ($sdff) from module $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000 (D = \write_data_i [15:8], Q = \gpio_dir_o [15:8]).
+Adding EN signal on $auto$ff.cc:337:slice$2493 ($sdff) from module $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000 (D = \write_data_i [23:16], Q = \gpio_dir_o [23:16]).
+Adding EN signal on $auto$ff.cc:337:slice$2493 ($sdff) from module $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000 (D = \write_data_i [31:24], Q = \gpio_dir_o [31:24]).
+Adding SRST signal on $procdff$2352 ($dff) from module $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000 (D = { $procmux$1279_Y $procmux$666_Y $procmux$686_Y $procmux$706_Y $procmux$726_Y $procmux$746_Y $procmux$766_Y $procmux$786_Y $procmux$806_Y $procmux$826_Y $procmux$846_Y $procmux$866_Y $procmux$886_Y $procmux$906_Y $procmux$926_Y $procmux$946_Y $procmux$966_Y $procmux$986_Y $procmux$1006_Y $procmux$1026_Y $procmux$1046_Y $procmux$1066_Y $procmux$1086_Y $procmux$1106_Y $procmux$1126_Y $procmux$1146_Y $procmux$1166_Y $procmux$1186_Y $procmux$1206_Y $procmux$1226_Y $procmux$1246_Y $procmux$1266_Y }, Q = \gpio_out_o, rval = 0).
+Adding EN signal on $auto$ff.cc:337:slice$2506 ($sdff) from module $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000 (D = \write_data_i [7:0], Q = \gpio_out_o [7:0]).
+Adding EN signal on $auto$ff.cc:337:slice$2506 ($sdff) from module $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000 (D = \write_data_i [15:8], Q = \gpio_out_o [15:8]).
+Adding EN signal on $auto$ff.cc:337:slice$2506 ($sdff) from module $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000 (D = \write_data_i [23:16], Q = \gpio_out_o [23:16]).
+Adding EN signal on $auto$ff.cc:337:slice$2506 ($sdff) from module $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000 (D = \write_data_i [31:24], Q = \gpio_out_o [31:24]).
+Adding SRST signal on $procdff$2368 ($dff) from module rv32i_core_pipeline (D = \id_alu_src_a, Q = \id_ex_alu_src_a_q, rval = 2'00).
+Adding SRST signal on $procdff$2378 ($dff) from module rv32i_core_pipeline (D = \id_ex_valid_q, Q = \ex_mem_valid_q, rval = 1'0).
+Adding SRST signal on $procdff$2379 ($dff) from module rv32i_core_pipeline (D = \ex_alu_result, Q = \ex_mem_alu_result_q, rval = 0).
+Adding SRST signal on $procdff$2377 ($dff) from module rv32i_core_pipeline (D = \id_jump_control, Q = \id_ex_jump_control_q, rval = 2'00).
+Adding SRST signal on $procdff$2380 ($dff) from module rv32i_core_pipeline (D = \ex_source_data_b, Q = \ex_mem_store_data_q, rval = 0).
+Adding SRST signal on $procdff$2381 ($dff) from module rv32i_core_pipeline (D = \ex_pc_plus_four, Q = \ex_mem_pc_plus_four_q, rval = 0).
+Adding SRST signal on $procdff$2382 ($dff) from module rv32i_core_pipeline (D = \id_ex_destination_q, Q = \ex_mem_destination_q, rval = 5'00000).
+Adding SRST signal on $procdff$2383 ($dff) from module rv32i_core_pipeline (D = \id_ex_register_write_q, Q = \ex_mem_register_write_q, rval = 1'0).
+Adding SRST signal on $procdff$2384 ($dff) from module rv32i_core_pipeline (D = \id_ex_memory_read_q, Q = \ex_mem_memory_read_q, rval = 1'0).
+Adding SRST signal on $procdff$2385 ($dff) from module rv32i_core_pipeline (D = \id_ex_memory_write_q, Q = \ex_mem_memory_write_q, rval = 1'0).
+Adding SRST signal on $procdff$2386 ($dff) from module rv32i_core_pipeline (D = \id_ex_memory_size_q, Q = \ex_mem_memory_size_q, rval = 2'10).
+Adding SRST signal on $procdff$2369 ($dff) from module rv32i_core_pipeline (D = \id_alu_src_b, Q = \id_ex_alu_src_b_q, rval = 2'00).
+Adding SRST signal on $procdff$2387 ($dff) from module rv32i_core_pipeline (D = \id_ex_load_unsigned_q, Q = \ex_mem_load_unsigned_q, rval = 1'0).
+Adding SRST signal on $procdff$2388 ($dff) from module rv32i_core_pipeline (D = \id_ex_writeback_source_q, Q = \ex_mem_writeback_source_q, rval = 2'00).
+Adding SRST signal on $procdff$2389 ($dff) from module rv32i_core_pipeline (D = \ex_mem_valid_q, Q = \mem_wb_valid_q, rval = 1'0).
+Adding SRST signal on $procdff$2370 ($dff) from module rv32i_core_pipeline (D = \id_alu_operation, Q = \id_ex_alu_operation_q, rval = 4'0000).
+Adding SRST signal on $procdff$2390 ($dff) from module rv32i_core_pipeline (D = \ex_mem_alu_result_q, Q = \mem_wb_alu_result_q, rval = 0).
+Adding SRST signal on $procdff$2371 ($dff) from module rv32i_core_pipeline (D = \id_memory_read, Q = \id_ex_memory_read_q, rval = 1'0).
+Adding SRST signal on $procdff$2391 ($dff) from module rv32i_core_pipeline (D = \mem_load_data, Q = \mem_wb_load_data_q, rval = 0).
+Adding SRST signal on $procdff$2372 ($dff) from module rv32i_core_pipeline (D = \id_memory_write, Q = \id_ex_memory_write_q, rval = 1'0).
+Adding SRST signal on $procdff$2392 ($dff) from module rv32i_core_pipeline (D = \ex_mem_pc_plus_four_q, Q = \mem_wb_pc_plus_four_q, rval = 0).
+Adding SRST signal on $procdff$2373 ($dff) from module rv32i_core_pipeline (D = \id_memory_size, Q = \id_ex_memory_size_q, rval = 2'10).
+Adding SRST signal on $procdff$2393 ($dff) from module rv32i_core_pipeline (D = \ex_mem_destination_q, Q = \mem_wb_destination_q, rval = 5'00000).
+Adding SRST signal on $procdff$2374 ($dff) from module rv32i_core_pipeline (D = \id_load_unsigned, Q = \id_ex_load_unsigned_q, rval = 1'0).
+Adding SRST signal on $procdff$2394 ($dff) from module rv32i_core_pipeline (D = \ex_mem_register_write_q, Q = \mem_wb_register_write_q, rval = 1'0).
+Adding SRST signal on $procdff$2395 ($dff) from module rv32i_core_pipeline (D = \ex_mem_writeback_source_q, Q = \mem_wb_writeback_source_q, rval = 2'00).
+Adding SRST signal on $procdff$2375 ($dff) from module rv32i_core_pipeline (D = \id_writeback_source, Q = \id_ex_writeback_source_q, rval = 2'00).
+Adding SRST signal on $procdff$2376 ($dff) from module rv32i_core_pipeline (D = \id_branch_control, Q = \id_ex_branch_control_q, rval = 3'000).
+Adding SRST signal on $procdff$2355 ($dff) from module rv32i_core_pipeline (D = $procmux$1557_Y, Q = \pc_q, rval = 0).
+Adding EN signal on $auto$ff.cc:337:slice$2567 ($sdff) from module rv32i_core_pipeline (D = $procmux$1557_Y, Q = \pc_q).
+Adding SRST signal on $procdff$2356 ($dff) from module rv32i_core_pipeline (D = $procmux$1545_Y, Q = \if_id_valid_q, rval = 1'0).
+Adding EN signal on $auto$ff.cc:337:slice$2571 ($sdff) from module rv32i_core_pipeline (D = 1'1, Q = \if_id_valid_q).
+Adding SRST signal on $procdff$2357 ($dff) from module rv32i_core_pipeline (D = $procmux$1536_Y, Q = \if_id_pc_q, rval = 0).
+Adding EN signal on $auto$ff.cc:337:slice$2575 ($sdff) from module rv32i_core_pipeline (D = \pc_q, Q = \if_id_pc_q).
+Adding SRST signal on $procdff$2358 ($dff) from module rv32i_core_pipeline (D = $procmux$1527_Y, Q = \if_id_instruction_q, rval = 19).
+Adding EN signal on $auto$ff.cc:337:slice$2579 ($sdff) from module rv32i_core_pipeline (D = \instruction_data_i, Q = \if_id_instruction_q).
+Adding SRST signal on $procdff$2359 ($dff) from module rv32i_core_pipeline (D = $logic_and$rtl/cpu/rv32i_core_pipeline.sv:167$63_Y, Q = \id_ex_valid_q, rval = 1'0).
+Adding SRST signal on $procdff$2360 ($dff) from module rv32i_core_pipeline (D = \if_id_pc_q, Q = \id_ex_pc_q, rval = 0).
+Adding SRST signal on $procdff$2361 ($dff) from module rv32i_core_pipeline (D = \id_register_data_a_bypassed, Q = \id_ex_register_data_a_q, rval = 0).
+Adding SRST signal on $procdff$2362 ($dff) from module rv32i_core_pipeline (D = \id_register_data_b_bypassed, Q = \id_ex_register_data_b_q, rval = 0).
+Adding SRST signal on $procdff$2363 ($dff) from module rv32i_core_pipeline (D = \id_immediate, Q = \id_ex_immediate_q, rval = 0).
+Adding SRST signal on $procdff$2364 ($dff) from module rv32i_core_pipeline (D = \if_id_instruction_q [19:15], Q = \id_ex_source_a_q, rval = 5'00000).
+Adding SRST signal on $procdff$2365 ($dff) from module rv32i_core_pipeline (D = \if_id_instruction_q [24:20], Q = \id_ex_source_b_q, rval = 5'00000).
+Adding SRST signal on $procdff$2366 ($dff) from module rv32i_core_pipeline (D = \if_id_instruction_q [11:7], Q = \id_ex_destination_q, rval = 5'00000).
+Adding SRST signal on $procdff$2367 ($dff) from module rv32i_core_pipeline (D = \id_register_write, Q = \id_ex_register_write_q, rval = 1'0).
+
+18.8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \rv32i_mini_soc..
+Finding unused cells or wires in module \timer..
+Finding unused cells or wires in module $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000..
+Finding unused cells or wires in module $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx..
+Finding unused cells or wires in module \simple_interconnect..
+Finding unused cells or wires in module $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000..
+Finding unused cells or wires in module \rv32i_core_pipeline..
+Finding unused cells or wires in module \hazard_unit..
+Finding unused cells or wires in module \forwarding_unit..
+Finding unused cells or wires in module \control_unit..
+Finding unused cells or wires in module \imm_gen..
+Finding unused cells or wires in module \regfile..
+Finding unused cells or wires in module \alu..
+Removed 372 unused cells and 307 unused wires.
+<suppressed ~376 debug messages>
+
+18.8.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module rv32i_mini_soc.
+Optimizing module timer.
+Optimizing module $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.
+Optimizing module $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx.
+<suppressed ~3 debug messages>
+Optimizing module simple_interconnect.
+Optimizing module $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000.
+Optimizing module rv32i_core_pipeline.
+Optimizing module hazard_unit.
+Optimizing module forwarding_unit.
+Optimizing module control_unit.
+Optimizing module imm_gen.
+Optimizing module regfile.
+Optimizing module alu.
+
+18.8.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+18.8.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \rv32i_mini_soc..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \timer..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \simple_interconnect..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \rv32i_core_pipeline..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \hazard_unit..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \forwarding_unit..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \control_unit..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \imm_gen..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \regfile..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \alu..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~245 debug messages>
+
+18.8.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \rv32i_mini_soc.
+  Optimizing cells in module \timer.
+  Optimizing cells in module $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.
+  Optimizing cells in module $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx.
+  Optimizing cells in module \simple_interconnect.
+  Optimizing cells in module $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000.
+  Optimizing cells in module \rv32i_core_pipeline.
+  Optimizing cells in module \hazard_unit.
+  Optimizing cells in module \forwarding_unit.
+  Optimizing cells in module \control_unit.
+  Optimizing cells in module \imm_gen.
+  Optimizing cells in module \regfile.
+  Optimizing cells in module \alu.
+Performed a total of 0 changes.
+
+18.8.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\rv32i_mini_soc'.
+Computing hashes of 6 cells of `\rv32i_mini_soc'.
+Finding duplicate cells in `\rv32i_mini_soc'.
+Finding identical cells in module `\timer'.
+Computing hashes of 31 cells of `\timer'.
+Finding duplicate cells in `\timer'.
+Computing hashes of 30 cells of `\timer'.
+Finding duplicate cells in `\timer'.
+<suppressed ~3 debug messages>
+Finding identical cells in module `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000'.
+Computing hashes of 17 cells of `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000'.
+Finding duplicate cells in `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000'.
+Finding identical cells in module `$paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx'.
+Computing hashes of 41 cells of `$paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx'.
+Finding duplicate cells in `$paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx'.
+Computing hashes of 37 cells of `$paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx'.
+Finding duplicate cells in `$paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx'.
+Computing hashes of 36 cells of `$paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx'.
+Finding duplicate cells in `$paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx'.
+<suppressed ~15 debug messages>
+Finding identical cells in module `\simple_interconnect'.
+Computing hashes of 25 cells of `\simple_interconnect'.
+Finding duplicate cells in `\simple_interconnect'.
+Finding identical cells in module `$paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000'.
+Computing hashes of 23 cells of `$paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000'.
+Finding duplicate cells in `$paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000'.
+Finding identical cells in module `\rv32i_core_pipeline'.
+Computing hashes of 145 cells of `\rv32i_core_pipeline'.
+Finding duplicate cells in `\rv32i_core_pipeline'.
+Computing hashes of 125 cells of `\rv32i_core_pipeline'.
+Finding duplicate cells in `\rv32i_core_pipeline'.
+<suppressed ~60 debug messages>
+Finding identical cells in module `\hazard_unit'.
+Computing hashes of 9 cells of `\hazard_unit'.
+Finding duplicate cells in `\hazard_unit'.
+Finding identical cells in module `\forwarding_unit'.
+Computing hashes of 18 cells of `\forwarding_unit'.
+Finding duplicate cells in `\forwarding_unit'.
+Finding identical cells in module `\control_unit'.
+Computing hashes of 93 cells of `\control_unit'.
+Finding duplicate cells in `\control_unit'.
+Finding identical cells in module `\imm_gen'.
+Computing hashes of 6 cells of `\imm_gen'.
+Finding duplicate cells in `\imm_gen'.
+Finding identical cells in module `\regfile'.
+Computing hashes of 12 cells of `\regfile'.
+Finding duplicate cells in `\regfile'.
+Finding identical cells in module `\alu'.
+Computing hashes of 21 cells of `\alu'.
+Finding duplicate cells in `\alu'.
+Removed a total of 26 cells.
+
+18.8.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+18.8.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \rv32i_mini_soc..
+Finding unused cells or wires in module \timer..
+Finding unused cells or wires in module $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000..
+Finding unused cells or wires in module $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx..
+Finding unused cells or wires in module \simple_interconnect..
+Finding unused cells or wires in module $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000..
+Finding unused cells or wires in module \rv32i_core_pipeline..
+Finding unused cells or wires in module \hazard_unit..
+Finding unused cells or wires in module \forwarding_unit..
+Finding unused cells or wires in module \control_unit..
+Finding unused cells or wires in module \imm_gen..
+Finding unused cells or wires in module \regfile..
+Finding unused cells or wires in module \alu..
+Removed 0 unused cells and 26 unused wires.
+<suppressed ~3 debug messages>
+
+18.8.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module rv32i_mini_soc.
+Optimizing module timer.
+Optimizing module $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.
+Optimizing module $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx.
+Optimizing module simple_interconnect.
+Optimizing module $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000.
+Optimizing module rv32i_core_pipeline.
+Optimizing module hazard_unit.
+Optimizing module forwarding_unit.
+Optimizing module control_unit.
+Optimizing module imm_gen.
+Optimizing module regfile.
+Optimizing module alu.
+
+18.8.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+18.8.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \rv32i_mini_soc..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \timer..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \simple_interconnect..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \rv32i_core_pipeline..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \hazard_unit..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \forwarding_unit..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \control_unit..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \imm_gen..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \regfile..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \alu..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~245 debug messages>
+
+18.8.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \rv32i_mini_soc.
+  Optimizing cells in module \timer.
+  Optimizing cells in module $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.
+  Optimizing cells in module $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx.
+  Optimizing cells in module \simple_interconnect.
+  Optimizing cells in module $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000.
+  Optimizing cells in module \rv32i_core_pipeline.
+  Optimizing cells in module \hazard_unit.
+  Optimizing cells in module \forwarding_unit.
+  Optimizing cells in module \control_unit.
+  Optimizing cells in module \imm_gen.
+  Optimizing cells in module \regfile.
+  Optimizing cells in module \alu.
+Performed a total of 0 changes.
+
+18.8.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\rv32i_mini_soc'.
+Computing hashes of 6 cells of `\rv32i_mini_soc'.
+Finding duplicate cells in `\rv32i_mini_soc'.
+Finding identical cells in module `\timer'.
+Computing hashes of 30 cells of `\timer'.
+Finding duplicate cells in `\timer'.
+Finding identical cells in module `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000'.
+Computing hashes of 17 cells of `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000'.
+Finding duplicate cells in `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000'.
+Finding identical cells in module `$paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx'.
+Computing hashes of 36 cells of `$paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx'.
+Finding duplicate cells in `$paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx'.
+Finding identical cells in module `\simple_interconnect'.
+Computing hashes of 25 cells of `\simple_interconnect'.
+Finding duplicate cells in `\simple_interconnect'.
+Finding identical cells in module `$paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000'.
+Computing hashes of 23 cells of `$paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000'.
+Finding duplicate cells in `$paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000'.
+Finding identical cells in module `\rv32i_core_pipeline'.
+Computing hashes of 125 cells of `\rv32i_core_pipeline'.
+Finding duplicate cells in `\rv32i_core_pipeline'.
+Finding identical cells in module `\hazard_unit'.
+Computing hashes of 9 cells of `\hazard_unit'.
+Finding duplicate cells in `\hazard_unit'.
+Finding identical cells in module `\forwarding_unit'.
+Computing hashes of 18 cells of `\forwarding_unit'.
+Finding duplicate cells in `\forwarding_unit'.
+Finding identical cells in module `\control_unit'.
+Computing hashes of 93 cells of `\control_unit'.
+Finding duplicate cells in `\control_unit'.
+Finding identical cells in module `\imm_gen'.
+Computing hashes of 6 cells of `\imm_gen'.
+Finding duplicate cells in `\imm_gen'.
+Finding identical cells in module `\regfile'.
+Computing hashes of 12 cells of `\regfile'.
+Finding duplicate cells in `\regfile'.
+Finding identical cells in module `\alu'.
+Computing hashes of 21 cells of `\alu'.
+Finding duplicate cells in `\alu'.
+Removed a total of 0 cells.
+
+18.8.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+18.8.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \rv32i_mini_soc..
+Finding unused cells or wires in module \timer..
+Finding unused cells or wires in module $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000..
+Finding unused cells or wires in module $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx..
+Finding unused cells or wires in module \simple_interconnect..
+Finding unused cells or wires in module $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000..
+Finding unused cells or wires in module \rv32i_core_pipeline..
+Finding unused cells or wires in module \hazard_unit..
+Finding unused cells or wires in module \forwarding_unit..
+Finding unused cells or wires in module \control_unit..
+Finding unused cells or wires in module \imm_gen..
+Finding unused cells or wires in module \regfile..
+Finding unused cells or wires in module \alu..
+
+18.8.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module rv32i_mini_soc.
+Optimizing module timer.
+Optimizing module $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.
+Optimizing module $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx.
+Optimizing module simple_interconnect.
+Optimizing module $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000.
+Optimizing module rv32i_core_pipeline.
+Optimizing module hazard_unit.
+Optimizing module forwarding_unit.
+Optimizing module control_unit.
+Optimizing module imm_gen.
+Optimizing module regfile.
+Optimizing module alu.
+
+18.8.23. Finished fast OPT passes. (There is nothing left to do.)
+
+18.9. Executing WREDUCE pass (reducing word size of cells).
+Removed top 31 bits (of 32) from port B of cell timer.$add$rtl/peripherals/timer.sv:68$261 ($add).
+Removed top 28 bits (of 32) from port B of cell timer.$procmux$498_CMP0 ($eq).
+Removed top 28 bits (of 32) from port B of cell timer.$procmux$499_CMP0 ($eq).
+Removed top 29 bits (of 32) from port B of cell timer.$procmux$500_CMP0 ($eq).
+Removed top 20 address bits (of 30) from memory init port $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.$auto$proc_memwr.cc:45:proc_memwr$2399 (memory).
+Removed top 20 address bits (of 30) from memory init port $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.$auto$proc_memwr.cc:45:proc_memwr$2400 (memory).
+Removed top 20 address bits (of 30) from memory init port $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.$auto$proc_memwr.cc:45:proc_memwr$2401 (memory).
+Removed top 20 address bits (of 30) from memory init port $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.$auto$proc_memwr.cc:45:proc_memwr$2402 (memory).
+Removed top 20 address bits (of 30) from memory read port $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.$memrd$\memory$rtl/memory/data_ram.sv:18$352 (memory).
+Removed top 20 bits (of 30) from mux cell $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.$procmux$514 ($mux).
+Removed top 20 bits (of 30) from mux cell $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.$procmux$523 ($mux).
+Removed top 20 bits (of 30) from mux cell $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.$procmux$532 ($mux).
+Removed top 20 bits (of 30) from mux cell $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.$procmux$541 ($mux).
+Removed top 8 bits (of 32) from wire $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.$0$memwr$\memory$rtl/memory/data_ram.sv:24$350_EN[31:0]$363.
+Removed top 20 bits (of 30) from wire $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.$0$memwr$\memory$rtl/memory/data_ram.sv:24$350_ADDR[29:0]$361.
+Removed top 16 bits (of 32) from wire $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.$0$memwr$\memory$rtl/memory/data_ram.sv:24$349_EN[31:0]$360.
+Removed top 20 bits (of 30) from wire $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.$0$memwr$\memory$rtl/memory/data_ram.sv:24$349_ADDR[29:0]$358.
+Removed top 24 bits (of 32) from wire $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.$0$memwr$\memory$rtl/memory/data_ram.sv:24$348_EN[31:0]$357.
+Removed top 20 bits (of 30) from wire $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.$0$memwr$\memory$rtl/memory/data_ram.sv:24$348_ADDR[29:0]$355.
+Removed top 20 bits (of 30) from wire $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.$0$memwr$\memory$rtl/memory/data_ram.sv:24$351_ADDR[29:0]$364.
+Removed top 1 bits (of 2) from port B of cell $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx.$auto$simple.cc:194:make_patterns_logic$2477 ($ne).
+Removed top 29 bits (of 32) from port B of cell $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx.$eq$rtl/peripherals/uart_tx.sv:30$335 ($eq).
+Removed top 31 bits (of 32) from mux cell $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx.$ternary$rtl/peripherals/uart_tx.sv:30$337 ($mux).
+Removed top 3 bits (of 24) from port B of cell simple_interconnect.$eq$rtl/bus/simple_interconnect.sv:42$142 ($eq).
+Removed top 3 bits (of 24) from port B of cell simple_interconnect.$eq$rtl/bus/simple_interconnect.sv:43$143 ($eq).
+Removed top 3 bits (of 24) from port B of cell simple_interconnect.$eq$rtl/bus/simple_interconnect.sv:44$144 ($eq).
+Removed top 20 bits (of 32) from mux cell simple_interconnect.$ternary$rtl/bus/simple_interconnect.sv:48$147 ($mux).
+Removed top 24 bits (of 32) from mux cell simple_interconnect.$ternary$rtl/bus/simple_interconnect.sv:54$151 ($mux).
+Removed top 24 bits (of 32) from mux cell simple_interconnect.$ternary$rtl/bus/simple_interconnect.sv:60$155 ($mux).
+Removed top 24 bits (of 32) from mux cell simple_interconnect.$ternary$rtl/bus/simple_interconnect.sv:66$159 ($mux).
+Removed top 28 bits (of 32) from port B of cell $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000.$procmux$1293_CMP0 ($eq).
+Removed top 29 bits (of 32) from port B of cell $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000.$procmux$1294_CMP0 ($eq).
+Removed top 29 bits (of 32) from port B of cell rv32i_core_pipeline.$add$rtl/cpu/rv32i_core_pipeline.sv:143$61 ($add).
+Removed top 1 bits (of 2) from port B of cell rv32i_core_pipeline.$ne$rtl/cpu/rv32i_core_pipeline.sv:223$78 ($ne).
+Removed top 29 bits (of 32) from port B of cell rv32i_core_pipeline.$add$rtl/cpu/rv32i_core_pipeline.sv:265$80 ($add).
+Removed top 16 bits (of 32) from port Y of cell rv32i_core_pipeline.$shr$rtl/cpu/rv32i_core_pipeline.sv:312$94 ($shr).
+Removed top 3 bits (of 4) from port A of cell rv32i_core_pipeline.$shl$rtl/cpu/rv32i_core_pipeline.sv:340$100 ($shl).
+Removed top 2 bits (of 4) from port A of cell rv32i_core_pipeline.$shl$rtl/cpu/rv32i_core_pipeline.sv:344$101 ($shl).
+Removed top 1 bits (of 2) from port B of cell rv32i_core_pipeline.$procmux$1565_CMP0 ($eq).
+Removed top 1 bits (of 2) from port B of cell rv32i_core_pipeline.$procmux$1592_CMP0 ($eq).
+Removed top 1 bits (of 2) from port B of cell rv32i_core_pipeline.$procmux$1625_CMP0 ($eq).
+Removed top 1 bits (of 3) from port B of cell rv32i_core_pipeline.$procmux$1639_CMP0 ($eq).
+Removed top 1 bits (of 3) from port B of cell rv32i_core_pipeline.$procmux$1640_CMP0 ($eq).
+Removed top 2 bits (of 3) from port B of cell rv32i_core_pipeline.$procmux$1641_CMP0 ($eq).
+Removed top 1 bits (of 2) from port B of cell rv32i_core_pipeline.$procmux$1645_CMP0 ($eq).
+Removed top 1 bits (of 2) from port B of cell rv32i_core_pipeline.$procmux$1650_CMP0 ($eq).
+Removed top 16 bits (of 32) from wire rv32i_core_pipeline.mem_unsigned_half.
+Removed top 24 bits (of 32) from wire rv32i_core_pipeline.mem_unsigned_byte.
+Removed top 16 bits (of 32) from wire rv32i_core_pipeline.mem_shifted_read_data.
+Removed top 1 bits (of 7) from port B of cell control_unit.$eq$rtl/cpu/control_unit.sv:244$33 ($eq).
+Removed top 7 bits (of 10) from port B of cell control_unit.$procmux$1730_CMP0 ($eq).
+Removed top 7 bits (of 10) from port B of cell control_unit.$procmux$1731_CMP0 ($eq).
+Removed top 1 bits (of 10) from port B of cell control_unit.$procmux$1732_CMP0 ($eq).
+Removed top 7 bits (of 10) from port B of cell control_unit.$procmux$1733_CMP0 ($eq).
+Removed top 7 bits (of 10) from port B of cell control_unit.$procmux$1734_CMP0 ($eq).
+Removed top 8 bits (of 10) from port B of cell control_unit.$procmux$1735_CMP0 ($eq).
+Removed top 8 bits (of 10) from port B of cell control_unit.$procmux$1736_CMP0 ($eq).
+Removed top 9 bits (of 10) from port B of cell control_unit.$procmux$1737_CMP0 ($eq).
+Removed top 1 bits (of 10) from port B of cell control_unit.$procmux$1738_CMP0 ($eq).
+Removed top 1 bits (of 2) from mux cell control_unit.$procmux$1751 ($mux).
+Removed top 1 bits (of 4) from mux cell control_unit.$procmux$1828 ($mux).
+Removed top 1 bits (of 3) from port B of cell control_unit.$procmux$1869_CMP0 ($eq).
+Removed top 2 bits (of 3) from mux cell control_unit.$procmux$1887 ($mux).
+Removed top 1 bits (of 2) from mux cell control_unit.$procmux$1895 ($mux).
+Removed top 1 bits (of 2) from mux cell control_unit.$procmux$1966 ($mux).
+Removed top 1 bits (of 3) from port B of cell control_unit.$procmux$2008_CMP0 ($eq).
+Removed top 1 bits (of 3) from mux cell control_unit.$procmux$2029 ($mux).
+Removed top 1 bits (of 4) from mux cell control_unit.$procmux$2074 ($pmux).
+Removed top 2 bits (of 3) from port B of cell control_unit.$procmux$2094_CMP0 ($eq).
+Removed top 1 bits (of 2) from mux cell control_unit.$procmux$2137 ($mux).
+Removed top 1 bits (of 2) from mux cell control_unit.$procmux$2197 ($pmux).
+Removed top 2 bits (of 7) from port B of cell control_unit.$procmux$2234_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell control_unit.$procmux$2235_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell control_unit.$procmux$2295_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell control_unit.$procmux$2296_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell control_unit.$procmux$2297_CMP0 ($eq).
+Removed top 5 bits (of 7) from port B of cell control_unit.$procmux$2298_CMP0 ($eq).
+Removed top 1 bits (of 2) from wire control_unit.$5\alu_src_b_o[1:0].
+Removed top 1 bits (of 4) from wire control_unit.$4\alu_op_o[3:0].
+Removed top 2 bits (of 3) from wire control_unit.$5\immediate_format_o[2:0].
+Removed top 1 bits (of 2) from wire control_unit.$4\alu_src_b_o[1:0].
+Removed top 1 bits (of 2) from wire control_unit.$3\alu_src_b_o[1:0].
+Removed top 1 bits (of 3) from wire control_unit.$3\immediate_format_o[2:0].
+Removed top 1 bits (of 4) from wire control_unit.$2\alu_op_o[3:0].
+Removed top 1 bits (of 2) from wire control_unit.$2\alu_src_b_o[1:0].
+Removed top 1 bits (of 3) from port B of cell imm_gen.$procmux$2304_CMP0 ($eq).
+Removed top 1 bits (of 3) from port B of cell imm_gen.$procmux$2305_CMP0 ($eq).
+Removed top 2 bits (of 3) from port B of cell imm_gen.$procmux$2306_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell alu.$procmux$2321_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell alu.$procmux$2322_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell alu.$procmux$2323_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell alu.$procmux$2324_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell alu.$procmux$2325_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell alu.$procmux$2326_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell alu.$procmux$2327_CMP0 ($eq).
+
+18.10. Executing PEEPOPT pass (run peephole optimizers).
+
+18.11. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \rv32i_mini_soc..
+Finding unused cells or wires in module \timer..
+Finding unused cells or wires in module $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000..
+Finding unused cells or wires in module $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx..
+Finding unused cells or wires in module \simple_interconnect..
+Finding unused cells or wires in module $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000..
+Finding unused cells or wires in module \rv32i_core_pipeline..
+Finding unused cells or wires in module \hazard_unit..
+Finding unused cells or wires in module \forwarding_unit..
+Finding unused cells or wires in module \control_unit..
+Finding unused cells or wires in module \imm_gen..
+Finding unused cells or wires in module \regfile..
+Finding unused cells or wires in module \alu..
+Removed 0 unused cells and 18 unused wires.
+<suppressed ~3 debug messages>
+
+18.12. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module rv32i_mini_soc:
+  created 0 $alu and 0 $macc cells.
+Extracting $alu and $macc cells in module timer:
+  creating $macc model for $add$rtl/peripherals/timer.sv:68$261 ($add).
+  creating $alu model for $macc $add$rtl/peripherals/timer.sv:68$261.
+  creating $alu cell for $add$rtl/peripherals/timer.sv:68$261: $auto$alumacc.cc:548:replace_alu$2628
+  created 1 $alu and 0 $macc cells.
+Extracting $alu and $macc cells in module $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000:
+  created 0 $alu and 0 $macc cells.
+Extracting $alu and $macc cells in module $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx:
+  creating $macc model for $add$rtl/peripherals/uart_tx.sv:52$343 ($add).
+  creating $macc model for $add$rtl/peripherals/uart_tx.sv:49$342 ($add).
+  creating $alu model for $macc $add$rtl/peripherals/uart_tx.sv:49$342.
+  creating $alu model for $macc $add$rtl/peripherals/uart_tx.sv:52$343.
+  creating $alu cell for $add$rtl/peripherals/uart_tx.sv:52$343: $auto$alumacc.cc:548:replace_alu$2631
+  creating $alu cell for $add$rtl/peripherals/uart_tx.sv:49$342: $auto$alumacc.cc:548:replace_alu$2634
+  created 2 $alu and 0 $macc cells.
+Extracting $alu and $macc cells in module simple_interconnect:
+  created 0 $alu and 0 $macc cells.
+Extracting $alu and $macc cells in module $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000:
+  created 0 $alu and 0 $macc cells.
+Extracting $alu and $macc cells in module rv32i_core_pipeline:
+  creating $macc model for $add$rtl/cpu/rv32i_core_pipeline.sv:266$81 ($add).
+  creating $macc model for $add$rtl/cpu/rv32i_core_pipeline.sv:265$80 ($add).
+  creating $macc model for $add$rtl/cpu/rv32i_core_pipeline.sv:143$61 ($add).
+  creating $alu model for $macc $add$rtl/cpu/rv32i_core_pipeline.sv:143$61.
+  creating $alu model for $macc $add$rtl/cpu/rv32i_core_pipeline.sv:265$80.
+  creating $alu model for $macc $add$rtl/cpu/rv32i_core_pipeline.sv:266$81.
+  creating $alu cell for $add$rtl/cpu/rv32i_core_pipeline.sv:266$81: $auto$alumacc.cc:548:replace_alu$2637
+  creating $alu cell for $add$rtl/cpu/rv32i_core_pipeline.sv:265$80: $auto$alumacc.cc:548:replace_alu$2640
+  creating $alu cell for $add$rtl/cpu/rv32i_core_pipeline.sv:143$61: $auto$alumacc.cc:548:replace_alu$2643
+  created 3 $alu and 0 $macc cells.
+Extracting $alu and $macc cells in module hazard_unit:
+  created 0 $alu and 0 $macc cells.
+Extracting $alu and $macc cells in module forwarding_unit:
+  created 0 $alu and 0 $macc cells.
+Extracting $alu and $macc cells in module control_unit:
+  created 0 $alu and 0 $macc cells.
+Extracting $alu and $macc cells in module imm_gen:
+  created 0 $alu and 0 $macc cells.
+Extracting $alu and $macc cells in module regfile:
+  created 0 $alu and 0 $macc cells.
+Extracting $alu and $macc cells in module alu:
+  creating $macc model for $sub$rtl/cpu/alu.sv:26$3 ($sub).
+  creating $macc model for $add$rtl/cpu/alu.sv:25$2 ($add).
+  creating $alu model for $macc $add$rtl/cpu/alu.sv:25$2.
+  creating $alu model for $macc $sub$rtl/cpu/alu.sv:26$3.
+  creating $alu model for $lt$rtl/cpu/alu.sv:31$8 ($lt): merged with $sub$rtl/cpu/alu.sv:26$3.
+  creating $alu model for $lt$rtl/cpu/alu.sv:30$7 ($lt): merged with $sub$rtl/cpu/alu.sv:26$3.
+  creating $alu cell for $sub$rtl/cpu/alu.sv:26$3, $lt$rtl/cpu/alu.sv:31$8, $lt$rtl/cpu/alu.sv:30$7: $auto$alumacc.cc:548:replace_alu$2646
+  creating $alu cell for $add$rtl/cpu/alu.sv:25$2: $auto$alumacc.cc:548:replace_alu$2655
+  created 2 $alu and 0 $macc cells.
+
+18.13. Executing SHARE pass (SAT-based resource sharing).
+Found 2 cells in module rv32i_core_pipeline that may be considered for resource sharing.
+  Analyzing resource sharing options for $shr$rtl/cpu/rv32i_core_pipeline.sv:312$94 ($shr):
+    Found 2 activation_patterns using ctrl signal { $procmux$1572_CMP $procmux$1571_CMP }.
+    No candidates found.
+  Analyzing resource sharing options for $shl$rtl/cpu/rv32i_core_pipeline.sv:319$95 ($shl):
+    Found 1 activation_patterns using ctrl signal { \data_write_o $auto$opt_reduce.cc:137:opt_pmux$2411 }.
+    No candidates found.
+Found 2 cells in module regfile that may be considered for resource sharing.
+  Analyzing resource sharing options for $memrd$\registers$rtl/cpu/regfile.sv:16$14 ($memrd):
+    Found 1 activation_patterns using ctrl signal $eq$rtl/cpu/regfile.sv:15$13_Y.
+    Found 1 candidates: $memrd$\registers$rtl/cpu/regfile.sv:18$17
+    Analyzing resource sharing with $memrd$\registers$rtl/cpu/regfile.sv:18$17 ($memrd):
+      Found 1 activation_patterns using ctrl signal $eq$rtl/cpu/regfile.sv:17$16_Y.
+      Activation pattern for cell $memrd$\registers$rtl/cpu/regfile.sv:16$14: $eq$rtl/cpu/regfile.sv:15$13_Y = 1'0
+      Activation pattern for cell $memrd$\registers$rtl/cpu/regfile.sv:18$17: $eq$rtl/cpu/regfile.sv:17$16_Y = 1'0
+      Size of SAT problem: 2 cells, 30 variables, 59 clauses
+      According to the SAT solver this pair of cells can not be shared.
+      Model from SAT solver: { $eq$rtl/cpu/regfile.sv:17$16_Y $eq$rtl/cpu/regfile.sv:15$13_Y } = 2'00
+  Analyzing resource sharing options for $memrd$\registers$rtl/cpu/regfile.sv:18$17 ($memrd):
+    Found 1 activation_patterns using ctrl signal $eq$rtl/cpu/regfile.sv:17$16_Y.
+    No candidates found.
+Found 3 cells in module alu that may be considered for resource sharing.
+  Analyzing resource sharing options for $shl$rtl/cpu/alu.sv:32$9 ($shl):
+    Found 1 activation_patterns using ctrl signal $procmux$2321_CMP.
+    No candidates found.
+  Analyzing resource sharing options for $shr$rtl/cpu/alu.sv:33$10 ($shr):
+    Found 1 activation_patterns using ctrl signal $procmux$2320_CMP.
+    No candidates found.
+  Analyzing resource sharing options for $sshr$rtl/cpu/alu.sv:34$11 ($sshr):
+    Found 1 activation_patterns using ctrl signal $procmux$2319_CMP.
+    No candidates found.
+
+18.14. Executing OPT pass (performing simple optimizations).
+
+18.14.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module rv32i_mini_soc.
+Optimizing module timer.
+Optimizing module $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.
+Optimizing module $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx.
+Optimizing module simple_interconnect.
+Optimizing module $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000.
+Optimizing module rv32i_core_pipeline.
+Optimizing module hazard_unit.
+Optimizing module forwarding_unit.
+Optimizing module control_unit.
+Optimizing module imm_gen.
+Optimizing module regfile.
+Optimizing module alu.
+
+18.14.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\rv32i_mini_soc'.
+Computing hashes of 6 cells of `\rv32i_mini_soc'.
+Finding duplicate cells in `\rv32i_mini_soc'.
+Finding identical cells in module `\timer'.
+Computing hashes of 30 cells of `\timer'.
+Finding duplicate cells in `\timer'.
+Finding identical cells in module `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000'.
+Computing hashes of 17 cells of `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000'.
+Finding duplicate cells in `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000'.
+Finding identical cells in module `$paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx'.
+Computing hashes of 36 cells of `$paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx'.
+Finding duplicate cells in `$paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx'.
+Finding identical cells in module `\simple_interconnect'.
+Computing hashes of 25 cells of `\simple_interconnect'.
+Finding duplicate cells in `\simple_interconnect'.
+Finding identical cells in module `$paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000'.
+Computing hashes of 23 cells of `$paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000'.
+Finding duplicate cells in `$paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000'.
+Finding identical cells in module `\rv32i_core_pipeline'.
+Computing hashes of 125 cells of `\rv32i_core_pipeline'.
+Finding duplicate cells in `\rv32i_core_pipeline'.
+Finding identical cells in module `\hazard_unit'.
+Computing hashes of 9 cells of `\hazard_unit'.
+Finding duplicate cells in `\hazard_unit'.
+Finding identical cells in module `\forwarding_unit'.
+Computing hashes of 18 cells of `\forwarding_unit'.
+Finding duplicate cells in `\forwarding_unit'.
+Finding identical cells in module `\control_unit'.
+Computing hashes of 93 cells of `\control_unit'.
+Finding duplicate cells in `\control_unit'.
+Finding identical cells in module `\imm_gen'.
+Computing hashes of 6 cells of `\imm_gen'.
+Finding duplicate cells in `\imm_gen'.
+Finding identical cells in module `\regfile'.
+Computing hashes of 12 cells of `\regfile'.
+Finding duplicate cells in `\regfile'.
+Finding identical cells in module `\alu'.
+Computing hashes of 22 cells of `\alu'.
+Finding duplicate cells in `\alu'.
+Removed a total of 0 cells.
+
+18.14.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \rv32i_mini_soc..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \timer..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \simple_interconnect..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \rv32i_core_pipeline..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \hazard_unit..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \forwarding_unit..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \control_unit..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \imm_gen..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \regfile..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \alu..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~245 debug messages>
+
+18.14.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \rv32i_mini_soc.
+  Optimizing cells in module \timer.
+  Optimizing cells in module $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.
+  Optimizing cells in module $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx.
+  Optimizing cells in module \simple_interconnect.
+  Optimizing cells in module $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000.
+  Optimizing cells in module \rv32i_core_pipeline.
+  Optimizing cells in module \hazard_unit.
+  Optimizing cells in module \forwarding_unit.
+  Optimizing cells in module \control_unit.
+  Optimizing cells in module \imm_gen.
+  Optimizing cells in module \regfile.
+  Optimizing cells in module \alu.
+Performed a total of 0 changes.
+
+18.14.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\rv32i_mini_soc'.
+Computing hashes of 6 cells of `\rv32i_mini_soc'.
+Finding duplicate cells in `\rv32i_mini_soc'.
+Finding identical cells in module `\timer'.
+Computing hashes of 30 cells of `\timer'.
+Finding duplicate cells in `\timer'.
+Finding identical cells in module `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000'.
+Computing hashes of 17 cells of `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000'.
+Finding duplicate cells in `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000'.
+Finding identical cells in module `$paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx'.
+Computing hashes of 36 cells of `$paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx'.
+Finding duplicate cells in `$paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx'.
+Finding identical cells in module `\simple_interconnect'.
+Computing hashes of 25 cells of `\simple_interconnect'.
+Finding duplicate cells in `\simple_interconnect'.
+Finding identical cells in module `$paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000'.
+Computing hashes of 23 cells of `$paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000'.
+Finding duplicate cells in `$paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000'.
+Finding identical cells in module `\rv32i_core_pipeline'.
+Computing hashes of 125 cells of `\rv32i_core_pipeline'.
+Finding duplicate cells in `\rv32i_core_pipeline'.
+Finding identical cells in module `\hazard_unit'.
+Computing hashes of 9 cells of `\hazard_unit'.
+Finding duplicate cells in `\hazard_unit'.
+Finding identical cells in module `\forwarding_unit'.
+Computing hashes of 18 cells of `\forwarding_unit'.
+Finding duplicate cells in `\forwarding_unit'.
+Finding identical cells in module `\control_unit'.
+Computing hashes of 93 cells of `\control_unit'.
+Finding duplicate cells in `\control_unit'.
+Computing hashes of 88 cells of `\control_unit'.
+Finding duplicate cells in `\control_unit'.
+<suppressed ~15 debug messages>
+Finding identical cells in module `\imm_gen'.
+Computing hashes of 6 cells of `\imm_gen'.
+Finding duplicate cells in `\imm_gen'.
+Finding identical cells in module `\regfile'.
+Computing hashes of 12 cells of `\regfile'.
+Finding duplicate cells in `\regfile'.
+Finding identical cells in module `\alu'.
+Computing hashes of 22 cells of `\alu'.
+Finding duplicate cells in `\alu'.
+Removed a total of 5 cells.
+
+18.14.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+18.14.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \rv32i_mini_soc..
+Finding unused cells or wires in module \timer..
+Finding unused cells or wires in module $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000..
+Finding unused cells or wires in module $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx..
+Finding unused cells or wires in module \simple_interconnect..
+Finding unused cells or wires in module $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000..
+Finding unused cells or wires in module \rv32i_core_pipeline..
+Finding unused cells or wires in module \hazard_unit..
+Finding unused cells or wires in module \forwarding_unit..
+Finding unused cells or wires in module \control_unit..
+Finding unused cells or wires in module \imm_gen..
+Finding unused cells or wires in module \regfile..
+Finding unused cells or wires in module \alu..
+Removed 0 unused cells and 7 unused wires.
+<suppressed ~2 debug messages>
+
+18.14.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module rv32i_mini_soc.
+Optimizing module timer.
+Optimizing module $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.
+Optimizing module $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx.
+Optimizing module simple_interconnect.
+Optimizing module $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000.
+Optimizing module rv32i_core_pipeline.
+Optimizing module hazard_unit.
+Optimizing module forwarding_unit.
+Optimizing module control_unit.
+Optimizing module imm_gen.
+Optimizing module regfile.
+Optimizing module alu.
+
+18.14.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+18.14.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \rv32i_mini_soc..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \timer..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \simple_interconnect..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \rv32i_core_pipeline..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \hazard_unit..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \forwarding_unit..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \control_unit..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \imm_gen..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \regfile..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \alu..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~243 debug messages>
+
+18.14.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \rv32i_mini_soc.
+  Optimizing cells in module \timer.
+  Optimizing cells in module $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.
+  Optimizing cells in module $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx.
+  Optimizing cells in module \simple_interconnect.
+  Optimizing cells in module $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000.
+  Optimizing cells in module \rv32i_core_pipeline.
+  Optimizing cells in module \hazard_unit.
+  Optimizing cells in module \forwarding_unit.
+  Optimizing cells in module \control_unit.
+  Optimizing cells in module \imm_gen.
+  Optimizing cells in module \regfile.
+  Optimizing cells in module \alu.
+Performed a total of 0 changes.
+
+18.14.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\rv32i_mini_soc'.
+Computing hashes of 6 cells of `\rv32i_mini_soc'.
+Finding duplicate cells in `\rv32i_mini_soc'.
+Finding identical cells in module `\timer'.
+Computing hashes of 30 cells of `\timer'.
+Finding duplicate cells in `\timer'.
+Finding identical cells in module `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000'.
+Computing hashes of 17 cells of `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000'.
+Finding duplicate cells in `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000'.
+Finding identical cells in module `$paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx'.
+Computing hashes of 36 cells of `$paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx'.
+Finding duplicate cells in `$paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx'.
+Finding identical cells in module `\simple_interconnect'.
+Computing hashes of 25 cells of `\simple_interconnect'.
+Finding duplicate cells in `\simple_interconnect'.
+Finding identical cells in module `$paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000'.
+Computing hashes of 23 cells of `$paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000'.
+Finding duplicate cells in `$paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000'.
+Finding identical cells in module `\rv32i_core_pipeline'.
+Computing hashes of 125 cells of `\rv32i_core_pipeline'.
+Finding duplicate cells in `\rv32i_core_pipeline'.
+Finding identical cells in module `\hazard_unit'.
+Computing hashes of 9 cells of `\hazard_unit'.
+Finding duplicate cells in `\hazard_unit'.
+Finding identical cells in module `\forwarding_unit'.
+Computing hashes of 18 cells of `\forwarding_unit'.
+Finding duplicate cells in `\forwarding_unit'.
+Finding identical cells in module `\control_unit'.
+Computing hashes of 88 cells of `\control_unit'.
+Finding duplicate cells in `\control_unit'.
+Finding identical cells in module `\imm_gen'.
+Computing hashes of 6 cells of `\imm_gen'.
+Finding duplicate cells in `\imm_gen'.
+Finding identical cells in module `\regfile'.
+Computing hashes of 12 cells of `\regfile'.
+Finding duplicate cells in `\regfile'.
+Finding identical cells in module `\alu'.
+Computing hashes of 22 cells of `\alu'.
+Finding duplicate cells in `\alu'.
+Removed a total of 0 cells.
+
+18.14.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+18.14.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \rv32i_mini_soc..
+Finding unused cells or wires in module \timer..
+Finding unused cells or wires in module $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000..
+Finding unused cells or wires in module $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx..
+Finding unused cells or wires in module \simple_interconnect..
+Finding unused cells or wires in module $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000..
+Finding unused cells or wires in module \rv32i_core_pipeline..
+Finding unused cells or wires in module \hazard_unit..
+Finding unused cells or wires in module \forwarding_unit..
+Finding unused cells or wires in module \control_unit..
+Finding unused cells or wires in module \imm_gen..
+Finding unused cells or wires in module \regfile..
+Finding unused cells or wires in module \alu..
+
+18.14.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module rv32i_mini_soc.
+Optimizing module timer.
+Optimizing module $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.
+Optimizing module $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx.
+Optimizing module simple_interconnect.
+Optimizing module $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000.
+Optimizing module rv32i_core_pipeline.
+Optimizing module hazard_unit.
+Optimizing module forwarding_unit.
+Optimizing module control_unit.
+Optimizing module imm_gen.
+Optimizing module regfile.
+Optimizing module alu.
+
+18.14.16. Finished fast OPT passes. (There is nothing left to do.)
+
+18.15. Executing MEMORY pass.
+
+18.15.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 96 transformations.
+
+18.15.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 6 transformations.
+
+18.15.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+  Analyzing $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.memory write port 0.
+  Analyzing $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.memory write port 1.
+  Analyzing $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.memory write port 2.
+  Analyzing $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.memory write port 3.
+  Analyzing regfile.registers write port 0.
+
+18.15.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+18.15.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+Checking read port `\memory'[0] in module `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000': no output FF found.
+Checking read port address `\memory'[0] in module `$paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000': no address FF found.
+Checking read port `\registers'[0] in module `\regfile': no output FF found.
+Checking read port `\registers'[1] in module `\regfile': no output FF found.
+Checking read port address `\registers'[0] in module `\regfile': no address FF found.
+Checking read port address `\registers'[1] in module `\regfile': no address FF found.
+
+18.15.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \rv32i_mini_soc..
+Finding unused cells or wires in module \timer..
+Finding unused cells or wires in module $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000..
+Finding unused cells or wires in module $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx..
+Finding unused cells or wires in module \simple_interconnect..
+Finding unused cells or wires in module $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000..
+Finding unused cells or wires in module \rv32i_core_pipeline..
+Finding unused cells or wires in module \hazard_unit..
+Finding unused cells or wires in module \forwarding_unit..
+Finding unused cells or wires in module \control_unit..
+Finding unused cells or wires in module \imm_gen..
+Finding unused cells or wires in module \regfile..
+Finding unused cells or wires in module \alu..
+
+18.15.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+Consolidating write ports of memory $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000.memory by address:
+  Merging ports 0, 1 (address \addr_i [11:2]).
+  Merging ports 0, 2 (address \addr_i [11:2]).
+  Merging ports 0, 3 (address \addr_i [11:2]).
+Consolidating read ports of memory regfile.registers by address:
+
+18.15.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+18.15.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \rv32i_mini_soc..
+Finding unused cells or wires in module \timer..
+Finding unused cells or wires in module $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000..
+Finding unused cells or wires in module $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx..
+Finding unused cells or wires in module \simple_interconnect..
+Finding unused cells or wires in module $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000..
+Finding unused cells or wires in module \rv32i_core_pipeline..
+Finding unused cells or wires in module \hazard_unit..
+Finding unused cells or wires in module \forwarding_unit..
+Finding unused cells or wires in module \control_unit..
+Finding unused cells or wires in module \imm_gen..
+Finding unused cells or wires in module \regfile..
+Finding unused cells or wires in module \alu..
+Removed 4 unused cells and 4 unused wires.
+<suppressed ~5 debug messages>
+
+18.15.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+18.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \rv32i_mini_soc..
+Finding unused cells or wires in module \timer..
+Finding unused cells or wires in module $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000..
+Finding unused cells or wires in module $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx..
+Finding unused cells or wires in module \simple_interconnect..
+Finding unused cells or wires in module $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000..
+Finding unused cells or wires in module \rv32i_core_pipeline..
+Finding unused cells or wires in module \hazard_unit..
+Finding unused cells or wires in module \forwarding_unit..
+Finding unused cells or wires in module \control_unit..
+Finding unused cells or wires in module \imm_gen..
+Finding unused cells or wires in module \regfile..
+Finding unused cells or wires in module \alu..
+
+19. Executing CHECK pass (checking for obvious problems).
+Checking module rv32i_mini_soc...
+Checking module timer...
+Checking module $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000...
+Checking module $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx...
+Checking module simple_interconnect...
+Checking module $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000...
+Checking module rv32i_core_pipeline...
+Checking module hazard_unit...
+Checking module forwarding_unit...
+Checking module control_unit...
+Checking module imm_gen...
+Checking module regfile...
+Checking module alu...
+Found and reported 0 problems.
+
+20. Printing statistics.
+
+=== rv32i_mini_soc ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       43 wires
+      678 wire bits
+       43 public wires
+      678 public wire bits
+        9 ports
+      164 port bits
+        6 submodules
+        1   $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx
+        1   $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000
+        1   $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000
+        1   rv32i_core_pipeline
+        1   simple_interconnect
+        1   timer
+
+=== timer ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       37 wires
+      319 wire bits
+       15 public wires
+      173 public wire bits
+       10 ports
+      106 port bits
+       30 cells
+        1   $alu
+        4   $eq
+        4   $logic_and
+        1   $logic_not
+        6   $mux
+        1   $pmux
+        5   $reduce_and
+        1   $sdff
+        7   $sdffe
+
+=== $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000 ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       13 wires
+      309 wire bits
+        5 public wires
+      101 public wire bits
+        5 ports
+      101 port bits
+        9 cells
+        1   $mem_v2
+        8   $mux
+
+=== $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       48 wires
+      269 wire bits
+       14 public wires
+      130 public wire bits
+       10 ports
+      106 port bits
+       36 cells
+        2   $alu
+        3   $eq
+        5   $logic_and
+        1   $logic_not
+       17   $mux
+        2   $ne
+        1   $reduce_and
+        1   $reduce_bool
+        1   $sdff
+        3   $sdffe
+
+=== simple_interconnect ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       38 wires
+      642 wire bits
+       34 public wires
+      514 public wire bits
+       34 ports
+      514 port bits
+       25 cells
+        3   $eq
+        8   $logic_and
+        1   $logic_not
+       13   $mux
+
+=== $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000 ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       26 wires
+      246 wire bits
+       12 public wires
+      201 public wire bits
+       12 ports
+      201 port bits
+       23 cells
+        2   $eq
+        2   $logic_and
+        1   $logic_not
+        1   $mux
+        1   $pmux
+        8   $reduce_and
+        8   $sdffe
+
+=== rv32i_core_pipeline ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      163 wires
+     1882 wire bits
+      101 public wires
+     1408 public wire bits
+       10 ports
+      168 port bits
+      119 cells
+        3   $alu
+       18   $eq
+       13   $logic_and
+        8   $logic_not
+       13   $mux
+        2   $ne
+        9   $pmux
+        2   $reduce_bool
+        6   $reduce_or
+       37   $sdff
+        4   $sdffe
+        3   $shl
+        1   $shr
+        6 submodules
+        1   alu
+        1   control_unit
+        1   forwarding_unit
+        1   hazard_unit
+        1   imm_gen
+        1   regfile
+
+=== hazard_unit ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       16 wires
+       28 wire bits
+        8 public wires
+       20 public wire bits
+        8 ports
+       20 port bits
+        9 cells
+        2   $eq
+        4   $logic_and
+        1   $logic_or
+        1   $mux
+        1   $reduce_bool
+
+=== forwarding_unit ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       29 wires
+      355 wire bits
+       13 public wires
+      215 public wire bits
+       13 ports
+      215 port bits
+       18 cells
+        4   $eq
+        6   $logic_and
+        6   $mux
+        2   $reduce_bool
+
+=== control_unit ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       92 wires
+      171 wire bits
+       19 public wires
+       76 public wire bits
+       16 ports
+       59 port bits
+       88 cells
+       26   $eq
+        3   $logic_not
+       28   $mux
+       18   $pmux
+       13   $reduce_or
+
+=== imm_gen ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       13 wires
+      232 wire bits
+        8 public wires
+      227 public wire bits
+        3 ports
+       67 port bits
+        6 cells
+        4   $eq
+        1   $logic_not
+        1   $pmux
+
+=== regfile ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       17 wires
+      250 wire bits
+        8 public wires
+      113 public wire bits
+        8 ports
+      113 port bits
+       10 cells
+        1   $logic_and
+        2   $logic_not
+        1   $mem_v2
+        5   $mux
+        1   $reduce_bool
+
+=== alu ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       30 wires
+      502 wire bits
+        5 public wires
+      105 public wire bits
+        4 ports
+      100 port bits
+       22 cells
+        2   $alu
+        1   $and
+        9   $eq
+        1   $logic_not
+        1   $not
+        1   $or
+        1   $pmux
+        1   $shl
+        1   $shr
+        1   $sshr
+        3   $xor
+
+=== design hierarchy ===
+
+        +----------Count including submodules.
+        | 
+      395 rv32i_mini_soc
+       36 $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx
+        9 $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000
+       23 $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000
+      119 rv32i_core_pipeline
+       22   alu
+       88   control_unit
+       18   forwarding_unit
+        9   hazard_unit
+        6   imm_gen
+       10   regfile
+       25 simple_interconnect
+       30 timer
+
+        +----------Count including submodules.
+        | 
+      565 wires
+     5883 wire bits
+      285 public wires
+     3961 public wire bits
+      142 ports
+     1934 port bits
+        - memories
+        - memory bits
+        - processes
+      395 cells
+        8   $alu
+        1   $and
+       75   $eq
+       43   $logic_and
+       19   $logic_not
+        1   $logic_or
+        2   $mem_v2
+       98   $mux
+        4   $ne
+        1   $not
+        1   $or
+       31   $pmux
+       14   $reduce_and
+        7   $reduce_bool
+       19   $reduce_or
+       39   $sdff
+       22   $sdffe
+        4   $shl
+        2   $shr
+        1   $sshr
+        3   $xor
+        6 submodules
+        1   $paramod$4eef2af280fd99bc8802aec7c066097e8b8dcbdd\uart_tx
+        1   $paramod\data_ram\MEM_SIZE_BYTES=s32'00000000000000000001000000000000
+        1   $paramod\gpio\GPIO_WIDTH=32'00000000000000000000000000100000
+        1   rv32i_core_pipeline
+        1   simple_interconnect
+        1   timer
+
+21. Executing JSON backend.
+
+End of script. Logfile hash: 065e19f61d, time: 0.75s, user: 0.75s, system: 0.00s
+Yosys 0.69 (git sha1 9f75ca1f9, Release, Clang /workspace/YoWASP/yosys/wasi-sdk-33.0-x86_64-linux/share/cmake/../..//bin/clang++ 22.1.0)
+Time spent: 19% 17x read_verilog (0 sec), 15% 13x opt_clean (0 sec), ...

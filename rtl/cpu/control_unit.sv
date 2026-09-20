@@ -1,5 +1,11 @@
 `timescale 1ns/1ps
 
+`ifdef YOSYS_SYNTHESIS
+import alu_pkg::*;
+import imm_gen_pkg::*;
+import control_unit_pkg::*;
+`endif
+
 module control_unit (
   input  logic [31:0]                              instruction_i,
   output logic                                     instruction_valid_o,
@@ -18,9 +24,11 @@ module control_unit (
   output control_unit_pkg::branch_control_t        branch_control_o,
   output control_unit_pkg::jump_control_t          jump_control_o
 );
+`ifndef YOSYS_SYNTHESIS
   import alu_pkg::*;
   import imm_gen_pkg::*;
   import control_unit_pkg::*;
+`endif
 
   localparam logic [6:0] OPCODE_LUI      = 7'b0110111;
   localparam logic [6:0] OPCODE_AUIPC    = 7'b0010111;

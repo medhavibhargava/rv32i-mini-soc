@@ -1,5 +1,19 @@
 `timescale 1ns/1ps
 
+`ifdef YOSYS_SYNTHESIS
+import alu_pkg::*;
+import imm_gen_pkg::*;
+import control_unit_pkg::*;
+typedef control_unit_pkg::alu_src_a_t alu_src_a_t;
+typedef control_unit_pkg::alu_src_b_t alu_src_b_t;
+typedef alu_pkg::alu_op_t alu_op_t;
+typedef imm_gen_pkg::imm_format_t imm_format_t;
+typedef control_unit_pkg::memory_size_t memory_size_t;
+typedef control_unit_pkg::writeback_source_t writeback_source_t;
+typedef control_unit_pkg::branch_control_t branch_control_t;
+typedef control_unit_pkg::jump_control_t jump_control_t;
+`endif
+
 module rv32i_core_pipeline (
   input  logic        clk_i,
   input  logic        reset_i,
@@ -14,9 +28,11 @@ module rv32i_core_pipeline (
   output logic [31:0] data_write_data_o,
   input  logic [31:0] data_read_data_i
 );
+`ifndef YOSYS_SYNTHESIS
   import alu_pkg::*;
   import imm_gen_pkg::*;
   import control_unit_pkg::*;
+`endif
 
   // IF stage and IF/ID pipeline register.
   logic [31:0] pc_q;

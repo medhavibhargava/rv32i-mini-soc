@@ -1,11 +1,17 @@
 `timescale 1ns/1ps
 
+`ifdef YOSYS_SYNTHESIS
+import imm_gen_pkg::*;
+`endif
+
 module imm_gen (
   input  logic [31:0]                instruction_i,
   input  imm_gen_pkg::imm_format_t   format_i,
   output logic [31:0]                immediate_o
 );
+`ifndef YOSYS_SYNTHESIS
   import imm_gen_pkg::*;
+`endif
 
   logic [31:0] immediate_i;
   logic [31:0] immediate_s;
